@@ -8,10 +8,18 @@
     
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&family=Srisakdi:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mina:wght@400;700&family=Roboto:wght@100;300;400;500;900&family=Srisakdi:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/05ea8ba719.js" crossorigin="anonymous"></script>
+
     <title>Orinoco, Vos Meubles Autrement</title>
 </head>
 <body>
+    <div class="ruler">
+        <div class="un"></div>
+        <div class="deux"></div>
+        <div class="trois"></div>
+    </div>
     <header>
         <div class="menu-wrap">
             <input type="checkbox" class="toggler">
@@ -22,12 +30,68 @@
                             <ul>
                                 <li><a href="#new_arrival">Nos Dernières Créations</a></li>
                                 <li><a href="#our_collection">Notre Collection</a></li>
-                                <li><a href="#about_us.html">Orinoco, créateur de style</a></li>
+                                <li><a href="#about_us.html">Notre Histoire</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
+        </div>
+        <div class="header">
+            <div></div>
+            <h1>Orinoco</h1>
+            <ul class="navbar">
+                <li class="search"><i class="fas fa-search"></i></li>
+                <li class="cart"><i class="fab fa-opencart"></i></li>
+                <li class="account"><i class="fas fa-user"></i></li>
+            </ul>
+        </div>
+        <div class="underline"></div>
     </header>
+    <section class="hero">
+        <h2 class="h2top">Elegance & Design</h2>
+        <h2 class="h2bottom">pour votre intérieur</h2>
+            <p>Avec Orinoco, créez votre nouvel intérieur. Avec des collections moderne et unique,<br> des matériaux nobles, redécouvrez vos meubles.</p>
+        <br><br>
+        <div class="store_button_container">
+            <a href="#our_collection" class="store_button">Boutique<i class="fas fa-store"></i></a>
+        </div>
+                <div class="container">
+                    <div class="carousel">
+                        <input type="radio" id="carousel-1" name="carousel[]" checked>
+                        <input type="radio" id="carousel-2" name="carousel[]">
+                        <input type="radio" id="carousel-3" name="carousel[]">
+                        <input type="radio" id="carousel-4" name="carousel[]">
+                        <input type="radio" id="carousel-5" name="carousel[]">
+                            <ul class="carousel__items">
+                                <li class="carousel__item"><img src="./images/oak_1.jpg" alt=""></li>
+                                <li class="carousel__item"><img src="./images/oak_2.jpg" alt=""></li>
+                                <li class="carousel__item"><img src="./images/oak_3.jpg" alt=""></li>
+                                <li class="carousel__item"><img src="./images/oak_4.jpg" alt=""></li>
+                                <li class="carousel__item"><img src="./images/oak_5.jpg" alt=""></li>
+                            </ul>
+                        <div class="carousel__prev">
+                            <label for="carousel-1"></label>
+                            <label for="carousel-2"></label>
+                            <label for="carousel-3"></label>
+                            <label for="carousel-4"></label>
+                            <label for="carousel-5"></label>
+                        </div>
+                        <div class="carousel__next">
+                            <label for="carousel-1"></label>
+                            <label for="carousel-2"></label>
+                            <label for="carousel-3"></label>
+                            <label for="carousel-4"></label>
+                            <label for="carousel-5"></label>
+                        </div>
+                        <div class="carousel__nav">
+                            <label for="carousel-1"></label>
+                            <label for="carousel-2"></label>
+                            <label for="carousel-3"></label>
+                            <label for="carousel-4"></label>
+                            <label for="carousel-5"></label>
+                        </div>
+                    </div>
+                </div>
+    </section>
 </body>
 </html>

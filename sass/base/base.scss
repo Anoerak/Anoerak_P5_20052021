@@ -2,8 +2,8 @@
     --primary-color:#F7F5F1;
     --overlay-color: #9D9691;
     --menu-speed: 0.5s;
-    --clr-primary: #ee6352;
-    --clr-secondary: #333;
+    --clr-primary: #3A1E09;
+    --clr-secondary: #D1CAC3;
     --clr-bg: #9D9691;
 }
 *{
@@ -12,8 +12,9 @@
 }
 
 body{
-   font-family: 'Roboto', sans-serif, 'Srisakdi', cursive;
-   box-sizing: border-box;
-   background-color: var(--primary-color);
-   max-width: 1200px;
+    font-family: 'Mina', sans-serif, 'Srisakdi', cursive;
+    box-sizing: border-box;
+    background-color: var(--primary-color);
+    margin: auto;
+    color: var(--clr-primary);
 }
