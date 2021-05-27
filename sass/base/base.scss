@@ -1,0 +1,19 @@
+:root {
+    --primary-color:#F7F5F1;
+    --overlay-color: #9D9691;
+    --menu-speed: 0.5s;
+    --clr-primary: #ee6352;
+    --clr-secondary: #333;
+    --clr-bg: #9D9691;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+   font-family: 'Roboto', sans-serif, 'Srisakdi', cursive;
+   box-sizing: border-box;
+   background-color: var(--primary-color);
+   max-width: 1200px;
+}
