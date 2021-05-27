@@ -1,17 +1,6 @@
 body{
-    & .ruler {
-        height: 15px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        & .deux {
-            height: 15px;
-            width: 2px;
-            background-color: red;
-        }
-    }
     & .header{
+        padding-top: 2rem;
         height: 50px;
         width: 100%;
         display: flex;
@@ -26,7 +15,7 @@ body{
             font-family: 'Mina';
             font-weight: 100;
             margin-left: max(65px, 15%);
-            font-size: 3rem;
+            font-size: 4rem;
         }
         & .navbar {
             max-width: 30%;

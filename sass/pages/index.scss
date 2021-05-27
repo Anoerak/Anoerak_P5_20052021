@@ -5,7 +5,7 @@ body{
         & h2{
             font-family: 'Srisakdi';
             font-size: 3.5rem;
-            font-weight: bold;
+            font-weight: 500;
             width: auto;
         }
         & .h2top{
@@ -42,6 +42,126 @@ body{
                 padding-left: 1rem;
                 & i{
                     padding-right: 1rem;
+                }
+            }
+        }
+    }
+    article{
+        & #our_collection{
+            width: 100%;
+            font-family: 'Srisakdi';
+            font-weight: 600;
+            font-size: 3rem;
+            text-decoration: underline;
+            margin-top: 10rem;
+            margin-bottom: 5rem;
+            margin-left: 2rem;
+        }
+        & .store .cards{
+            width: 95%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-evenly;
+            & .card{
+                text-align: center;
+                text-decoration: none;
+                color: var(--clr-primary);
+                max-height: 265px;
+                max-width: 400px;
+                margin: 2.5rem;
+                margin-top: 3rem;
+                background-color: transparent;
+                border-radius: 5px;
+                box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15),3px 3px 6px rgba(0, 0, 0, 0.05);;
+                &:hover{
+                    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15),6px 6px 12px rgba(0, 0, 0, 0.05);;
+                    cursor: url(./images/hammer-solid.png);
+                }
+                & h4{
+                    font-size: 1.25rem;
+                }
+                & img{
+                    object-fit: cover;
+                    border-radius: 5px;
+                }
+                & p{
+                    text-align: center;
+                }
+            }
+        }
+        & #our_history{
+            width: 100%;
+            font-family: 'Srisakdi';
+            font-weight: 600;
+            font-size: 3rem;
+            text-decoration: underline;
+            margin-top: 10rem;
+            margin-bottom: 5rem;
+            margin-left: 2rem;
+        }
+        & p{
+            width: 95%;
+            text-align: justify;
+            margin-top: auto;
+            padding-left: 1rem;
+        }
+    }
+    footer {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        & .underline_top,.underline_bottom{
+            height: 1px;
+            width: 95%;
+            background-color: var(--clr-secondary);
+            margin: auto;
+        }
+        & .container_footer{
+            display: flex;
+            flex-direction: row;
+            width: 98%;
+            height: 100%;
+            align-items: center;
+            justify-content: space-evenly;
+            & .foot{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-evenly;
+                max-width: 33%;
+                height: 100%;
+                & i{
+                    font-size: 2rem;
+                }
+                & .foot_description{
+                    max-width: 70%;
+                }
+            }
+        }
+        & .social_medias{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 150px;
+            & p{
+                font-size: 3rem;
+                padding-top: 1rem;
+            }
+            & .banner{
+                margin-top: 1rem;
+                width: 30%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-evenly;
+                & i{
+                    font-size: 2rem;
                 }
             }
         }

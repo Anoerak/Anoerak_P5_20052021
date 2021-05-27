@@ -121,7 +121,7 @@ body {
   z-index: 10;
   margin-right: auto;
   margin-left: 2.5%;
-  margin-top: 96px;
+  margin-top: 114px;
   margin-bottom: auto;
   opacity: 0.9;
   width: 20rem;
@@ -159,19 +159,8 @@ body {
   background: var(--clr-primary);
 }
 
-body .ruler {
-  height: 15px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-body .ruler .deux {
-  height: 15px;
-  width: 2px;
-  background-color: red;
-}
 body .header {
+  padding-top: 2rem;
   height: 50px;
   width: 100%;
   display: flex;
@@ -187,7 +176,7 @@ body .header h1 {
   font-family: "Mina";
   font-weight: 100;
   margin-left: max(65px, 15%);
-  font-size: 3rem;
+  font-size: 4rem;
 }
 body .header .navbar {
   max-width: 30%;
@@ -224,7 +213,7 @@ body .hero {
 body .hero h2 {
   font-family: "Srisakdi";
   font-size: 3.5rem;
-  font-weight: bold;
+  font-weight: 500;
   width: auto;
 }
 body .hero .h2top {
@@ -264,13 +253,132 @@ body .hero .store_button_container .store_button {
 body .hero .store_button_container .store_button i {
   padding-right: 1rem;
 }
+body article #our_collection {
+  width: 100%;
+  font-family: "Srisakdi";
+  font-weight: 600;
+  font-size: 3rem;
+  text-decoration: underline;
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  margin-left: 2rem;
+}
+body article .store .cards {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+body article .store .cards .card {
+  text-align: center;
+  text-decoration: none;
+  color: var(--clr-primary);
+  max-height: 265px;
+  max-width: 400px;
+  margin: 2.5rem;
+  margin-top: 3rem;
+  background-color: transparent;
+  border-radius: 5px;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15), 3px 3px 6px rgba(0, 0, 0, 0.05);
+}
+body article .store .cards .card:hover {
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15), 6px 6px 12px rgba(0, 0, 0, 0.05);
+  cursor: url(./images/hammer-solid.png);
+}
+body article .store .cards .card h4 {
+  font-size: 1.25rem;
+}
+body article .store .cards .card img {
+  object-fit: cover;
+  border-radius: 5px;
+}
+body article .store .cards .card p {
+  text-align: center;
+}
+body article #our_history {
+  width: 100%;
+  font-family: "Srisakdi";
+  font-weight: 600;
+  font-size: 3rem;
+  text-decoration: underline;
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  margin-left: 2rem;
+}
+body article p {
+  width: 95%;
+  text-align: justify;
+  margin-top: auto;
+  padding-left: 1rem;
+}
+body footer {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body footer .underline_top, body footer .underline_bottom {
+  height: 1px;
+  width: 95%;
+  background-color: var(--clr-secondary);
+  margin: auto;
+}
+body footer .container_footer {
+  display: flex;
+  flex-direction: row;
+  width: 98%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+body footer .container_footer .foot {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  max-width: 33%;
+  height: 100%;
+}
+body footer .container_footer .foot i {
+  font-size: 2rem;
+}
+body footer .container_footer .foot .foot_description {
+  max-width: 70%;
+}
+body footer .social_medias {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+}
+body footer .social_medias p {
+  font-size: 3rem;
+  padding-top: 1rem;
+}
+body footer .social_medias .banner {
+  margin-top: 1rem;
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+body footer .social_medias .banner i {
+  font-size: 2rem;
+}
 
-body section .carousel > input[type=radio]:nth-child(5):checked ~ .carousel__next > label:nth-child(1), body section .carousel > input[type=radio]:nth-child(5):checked ~ .carousel__prev > label:nth-child(4), body section .carousel > input[type=radio]:nth-child(4):checked ~ .carousel__next > label:nth-child(5), body section .carousel > input[type=radio]:nth-child(4):checked ~ .carousel__prev > label:nth-child(3), body section .carousel > input[type=radio]:nth-child(3):checked ~ .carousel__next > label:nth-child(4), body section .carousel > input[type=radio]:nth-child(3):checked ~ .carousel__prev > label:nth-child(2), body section .carousel > input[type=radio]:nth-child(2):checked ~ .carousel__next > label:nth-child(3), body section .carousel > input[type=radio]:nth-child(2):checked ~ .carousel__prev > label:nth-child(1), body section .carousel > input[type=radio]:nth-child(1):checked ~ .carousel__next > label:nth-child(2), body section .carousel > input[type=radio]:nth-child(1):checked ~ .carousel__prev > label:nth-child(5) {
+body section .carousel > input[type=radio]:nth-child(5):checked ~ .carousel_next > label:nth-child(1), body section .carousel > input[type=radio]:nth-child(5):checked ~ .carousel_prev > label:nth-child(4), body section .carousel > input[type=radio]:nth-child(4):checked ~ .carousel_next > label:nth-child(5), body section .carousel > input[type=radio]:nth-child(4):checked ~ .carousel_prev > label:nth-child(3), body section .carousel > input[type=radio]:nth-child(3):checked ~ .carousel_next > label:nth-child(4), body section .carousel > input[type=radio]:nth-child(3):checked ~ .carousel_prev > label:nth-child(2), body section .carousel > input[type=radio]:nth-child(2):checked ~ .carousel_next > label:nth-child(3), body section .carousel > input[type=radio]:nth-child(2):checked ~ .carousel_prev > label:nth-child(1), body section .carousel > input[type=radio]:nth-child(1):checked ~ .carousel_next > label:nth-child(2), body section .carousel > input[type=radio]:nth-child(1):checked ~ .carousel_prev > label:nth-child(5) {
   opacity: 1 !important;
   z-index: 3;
 }
 
 .container {
+  min-height: 600px;
   width: 90%;
   margin: auto;
 }
@@ -286,52 +394,52 @@ body section .carousel > input[type=radio] {
   display: 0;
   top: 0;
 }
-body section .carousel > input[type=radio]:checked ~ .carousel__items .carousel__item,
-body section .carousel > input[type=radio]:checked ~ .carousel__prev > label,
-body section .carousel > input[type=radio]:checked ~ .carousel__next > label {
+body section .carousel > input[type=radio]:checked ~ .carousel_items .carousel_item,
+body section .carousel > input[type=radio]:checked ~ .carousel_prev > label,
+body section .carousel > input[type=radio]:checked ~ .carousel_next > label {
   opacity: 0;
 }
-body section .carousel > input[type=radio]:nth-child(1):checked ~ .carousel__items .carousel__item:nth-child(1) {
+body section .carousel > input[type=radio]:nth-child(1):checked ~ .carousel_items .carousel_item:nth-child(1) {
   opacity: 1;
 }
-body section .carousel > input[type=radio]:nth-child(1):checked ~ .carousel__nav > label:nth-child(1) {
+body section .carousel > input[type=radio]:nth-child(1):checked ~ .carousel_nav > label:nth-child(1) {
   background: #ccc;
   cursor: default;
   pointer-events: none;
 }
-body section .carousel > input[type=radio]:nth-child(2):checked ~ .carousel__items .carousel__item:nth-child(2) {
+body section .carousel > input[type=radio]:nth-child(2):checked ~ .carousel_items .carousel_item:nth-child(2) {
   opacity: 1;
 }
-body section .carousel > input[type=radio]:nth-child(2):checked ~ .carousel__nav > label:nth-child(2) {
+body section .carousel > input[type=radio]:nth-child(2):checked ~ .carousel_nav > label:nth-child(2) {
   background: #ccc;
   cursor: default;
   pointer-events: none;
 }
-body section .carousel > input[type=radio]:nth-child(3):checked ~ .carousel__items .carousel__item:nth-child(3) {
+body section .carousel > input[type=radio]:nth-child(3):checked ~ .carousel_items .carousel_item:nth-child(3) {
   opacity: 1;
 }
-body section .carousel > input[type=radio]:nth-child(3):checked ~ .carousel__nav > label:nth-child(3) {
+body section .carousel > input[type=radio]:nth-child(3):checked ~ .carousel_nav > label:nth-child(3) {
   background: #ccc;
   cursor: default;
   pointer-events: none;
 }
-body section .carousel > input[type=radio]:nth-child(4):checked ~ .carousel__items .carousel__item:nth-child(4) {
+body section .carousel > input[type=radio]:nth-child(4):checked ~ .carousel_items .carousel_item:nth-child(4) {
   opacity: 1;
 }
-body section .carousel > input[type=radio]:nth-child(4):checked ~ .carousel__nav > label:nth-child(4) {
+body section .carousel > input[type=radio]:nth-child(4):checked ~ .carousel_nav > label:nth-child(4) {
   background: #ccc;
   cursor: default;
   pointer-events: none;
 }
-body section .carousel > input[type=radio]:nth-child(5):checked ~ .carousel__items .carousel__item:nth-child(5) {
+body section .carousel > input[type=radio]:nth-child(5):checked ~ .carousel_items .carousel_item:nth-child(5) {
   opacity: 1;
 }
-body section .carousel > input[type=radio]:nth-child(5):checked ~ .carousel__nav > label:nth-child(5) {
+body section .carousel > input[type=radio]:nth-child(5):checked ~ .carousel_nav > label:nth-child(5) {
   background: #ccc;
   cursor: default;
   pointer-events: none;
 }
-body section .carousel__items {
+body section .carousel_items {
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -339,7 +447,7 @@ body section .carousel__items {
   height: 600px;
   position: relative;
 }
-body section .carousel__item {
+body section .carousel_item {
   position: absolute;
   top: 0;
   left: 0;
@@ -349,11 +457,11 @@ body section .carousel__item {
   transition: opacity 2s;
   -webkit-transition: opacity 2s;
 }
-body section .carousel__item img {
+body section .carousel_item img {
   width: 100%;
   vertical-align: middle;
 }
-body section .carousel__prev > label, body section .carousel__next > label {
+body section .carousel_prev > label, body section .carousel_next > label {
   border: 1px solid #fff;
   border-radius: 50%;
   cursor: pointer;
@@ -369,39 +477,39 @@ body section .carousel__prev > label, body section .carousel__next > label {
   opacity: 0;
   z-index: 2;
 }
-body section .carousel__prev > label:hover, body section .carousel__prev > label:focus, body section .carousel__next > label:hover, body section .carousel__next > label:focus {
+body section .carousel_prev > label:hover, body section .carousel_prev > label:focus, body section .carousel_next > label:hover, body section .carousel_next > label:focus {
   opacity: 0.5 !important;
 }
-body section .carousel__prev > label:before, body section .carousel__prev > label:after, body section .carousel__next > label:before, body section .carousel__next > label:after {
+body section .carousel_prev > label:before, body section .carousel_prev > label:after, body section .carousel_next > label:before, body section .carousel_next > label:after {
   content: "";
   position: absolute;
   width: inherit;
   height: inherit;
 }
-body section .carousel__prev > label:before, body section .carousel__next > label:before {
+body section .carousel_prev > label:before, body section .carousel_next > label:before {
   background: linear-gradient(to top, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%), linear-gradient(to left, #fff 0%, #fff 10%, rgba(51, 51, 51, 0) 10%);
   width: 60%;
   height: 60%;
   top: 20%;
 }
-body section .carousel__prev > label {
+body section .carousel_prev > label {
   left: 2%;
 }
-body section .carousel__prev > label:before {
+body section .carousel_prev > label:before {
   left: 35%;
   top: 20%;
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
 }
-body section .carousel__next > label {
+body section .carousel_next > label {
   right: 2%;
 }
-body section .carousel__next > label:before {
+body section .carousel_next > label:before {
   left: 10%;
   transform: rotate(315deg);
   -webkit-transform: rotate(315deg);
 }
-body section .carousel__nav {
+body section .carousel_nav {
   position: absolute;
   bottom: 3%;
   left: 0;
@@ -409,7 +517,7 @@ body section .carousel__nav {
   width: 100%;
   z-index: 3;
 }
-body section .carousel__nav > label {
+body section .carousel_nav > label {
   border: 1px solid #fff;
   display: inline-block;
   border-radius: 50%;

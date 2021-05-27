@@ -15,12 +15,7 @@
     <title>Orinoco, Vos Meubles Autrement</title>
 </head>
 <body>
-    <div class="ruler">
-        <div class="un"></div>
-        <div class="deux"></div>
-        <div class="trois"></div>
-    </div>
-    <header>
+    <header id="home">
         <div class="menu-wrap">
             <input type="checkbox" class="toggler">
             <div class="hamburger"><div></div></div>
@@ -28,9 +23,10 @@
                     <div>
                         <div>
                             <ul>
-                                <li><a href="#new_arrival">Nos Dernières Créations</a></li>
+                                <li><a href="#home">Accueil</a></li>
                                 <li><a href="#our_collection">Notre Collection</a></li>
-                                <li><a href="#about_us.html">Notre Histoire</a></li>
+                                <li><a href="#new_arrival">Nos Dernières Créations</a></li>
+                                <li><a href="#our_history">Notre Histoire</a></li>
                             </ul>
                         </div>
                     </div>
@@ -47,51 +43,127 @@
         </div>
         <div class="underline"></div>
     </header>
-    <section class="hero">
-        <h2 class="h2top">Elegance & Design</h2>
-        <h2 class="h2bottom">pour votre intérieur</h2>
-            <p>Avec Orinoco, créez votre nouvel intérieur. Avec des collections moderne et unique,<br> des matériaux nobles, redécouvrez vos meubles.</p>
-        <br><br>
-        <div class="store_button_container">
-            <a href="#our_collection" class="store_button">Boutique<i class="fas fa-store"></i></a>
-        </div>
-                <div class="container">
-                    <div class="carousel">
-                        <input type="radio" id="carousel-1" name="carousel[]" checked>
-                        <input type="radio" id="carousel-2" name="carousel[]">
-                        <input type="radio" id="carousel-3" name="carousel[]">
-                        <input type="radio" id="carousel-4" name="carousel[]">
-                        <input type="radio" id="carousel-5" name="carousel[]">
-                            <ul class="carousel__items">
-                                <li class="carousel__item"><img src="./images/oak_1.jpg" alt=""></li>
-                                <li class="carousel__item"><img src="./images/oak_2.jpg" alt=""></li>
-                                <li class="carousel__item"><img src="./images/oak_3.jpg" alt=""></li>
-                                <li class="carousel__item"><img src="./images/oak_4.jpg" alt=""></li>
-                                <li class="carousel__item"><img src="./images/oak_5.jpg" alt=""></li>
-                            </ul>
-                        <div class="carousel__prev">
-                            <label for="carousel-1"></label>
-                            <label for="carousel-2"></label>
-                            <label for="carousel-3"></label>
-                            <label for="carousel-4"></label>
-                            <label for="carousel-5"></label>
-                        </div>
-                        <div class="carousel__next">
-                            <label for="carousel-1"></label>
-                            <label for="carousel-2"></label>
-                            <label for="carousel-3"></label>
-                            <label for="carousel-4"></label>
-                            <label for="carousel-5"></label>
-                        </div>
-                        <div class="carousel__nav">
-                            <label for="carousel-1"></label>
-                            <label for="carousel-2"></label>
-                            <label for="carousel-3"></label>
-                            <label for="carousel-4"></label>
-                            <label for="carousel-5"></label>
+    <section>
+        <article class="hero">
+            <h2 class="h2top">Elegance & Design</h2>
+            <h2 class="h2bottom">pour votre intérieur</h2>
+                <p>Avec Orinoco, créez votre nouvel intérieur. Avec des collections moderne et unique,<br> des matériaux nobles, redécouvrez vos meubles.</p>
+            <br><br>
+            <div class="store_button_container">
+                <a href="#our_collection" class="store_button">Boutique<i class="fas fa-store"></i></a>
+            </div>
+                    <div class="container">
+                        <div class="carousel">
+                            <input type="radio" id="carousel-1" name="carousel[]" checked>
+                            <input type="radio" id="carousel-2" name="carousel[]">
+                            <input type="radio" id="carousel-3" name="carousel[]">
+                            <input type="radio" id="carousel-4" name="carousel[]">
+                            <input type="radio" id="carousel-5" name="carousel[]">
+                                <ul class="carousel_items">
+                                    <li class="carousel_item"><img src="./images/oak_1.jpg" alt=""></li>
+                                    <li class="carousel_item"><img src="./images/oak_2.jpg" alt=""></li>
+                                    <li class="carousel_item"><img src="./images/oak_3.jpg" alt=""></li>
+                                    <li class="carousel_item"><img src="./images/oak_4.jpg" alt=""></li>
+                                    <li class="carousel_item"><img src="./images/oak_5.jpg" alt=""></li>
+                                </ul>
+                            <div class="carousel_prev">
+                                <label for="carousel-1"></label>
+                                <label for="carousel-2"></label>
+                                <label for="carousel-3"></label>
+                                <label for="carousel-4"></label>
+                                <label for="carousel-5"></label>
+                            </div>
+                            <div class="carousel_next">
+                                <label for="carousel-1"></label>
+                                <label for="carousel-2"></label>
+                                <label for="carousel-3"></label>
+                                <label for="carousel-4"></label>
+                                <label for="carousel-5"></label>
+                            </div>
+                            <div class="carousel_nav">
+                                <label for="carousel-1"></label>
+                                <label for="carousel-2"></label>
+                                <label for="carousel-3"></label>
+                                <label for="carousel-4"></label>
+                                <label for="carousel-5"></label>
+                            </div>
                         </div>
                     </div>
+        </article>
+        <article>
+            <h3 id="our_collection">Notre Collection</h3>
+                <div class="store">
+                    <div class="cards">
+                        <a href=./product.html class="card">
+                            <img src="./images/oak_1.webp" alt="song">
+                            <h4>Cross Table</h4>
+                            <p>Consulter la fiche</p>
+                        </a>
+                        <a href=./product.html class="card">
+                            <img src="./images/oak_2.webp" alt="song">
+                            <h4>Coffee Table</h4>
+                            <p>Consulter la fiche</p>
+                        </a>
+                        <a href=./product.html class="card">
+                            <img src="./images/oak_3.webp" alt="song">
+                            <h4>Dining Table (extendable)</h4>
+                            <p>Consulter la fiche</p>
+                        </a>
+                        <a href=./product.html class="card">
+                            <img src="./images/oak_4.webp" alt="song">
+                            <h4>Bench</h4>
+                            <p>Consulter la fiche</p>
+                        </a>
+                        <a href=./product.html class="card">
+                            <img src="./images/oak_5.webp" alt="song">
+                            <h4>Vintage Chair</h4>
+                            <p>Consulter la fiche</p>
+                        </a>
+                    </div>
                 </div>
+        </article>
     </section>
+    <section>
+        <article>
+            <h3 id="our_history">Notre Histoire</h3>
+            <p class="history">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas maxime voluptatibus non cumque voluptates pariatur minus. Molestias iure suscipit nostrum dicta culpa, incidunt odit velit odio accusantium expedita nobis rerum non amet id corporis consequuntur ex dignissimos? <br> Accusamus ut repellendus debitis neque cumque, quae fugit iure non, aspernatur dicta modi tenetur nemo a error repudiandae facere at quas ex optio aut unde iste? Odit, totam tempore, cupiditate quidem, dignissimos animi placeat nam incidunt vero eum earum officiis? <br> Ut, consequatur, provident possimus ullam repellat odio accusamus dolores, commodi ab minus eligendi blanditiis omnis quaerat alias dolore culpa dolor voluptatem? Expedita consequatur, corporis amet perferendis, maiores cumque dolorem reiciendis repudiandae vitae laborum neque ea veniam soluta atque deleniti est, nostrum eius in at rem libero! <br> Quos mollitia odit labore natus, dicta qui beatae fugit voluptatem rem eius officiis error soluta incidunt cum est laboriosam sit ex et aut! Corrupti placeat nobis assumenda illo quas autem, aliquam veritatis molestias magnam numquam eius nulla amet ab doloribus ipsa necessitatibus a, ex tenetur adipisci maxime dolor quidem id sit. Reprehenderit, atque, perspiciatis vitae, architecto iure magni sint ut id fugit cum rerum? Modi obcaecati nihil quia repellendus facilis repudiandae quo. Vero repellendus error blanditiis enim quisquam tempore suscipit, esse omnis magnam placeat dolorum voluptatum dolorem debitis mollitia minima! Dolorum iure sit accusamus? Placeat porro fugiat iure itaque. Sequi reiciendis iusto tempora pariatur possimus aspernatur, itaque consequuntur a tempore dicta sapiente maiores repellendus obcaecati, minima quod repellat molestiae vero corporis facilis inventore rerum, similique error quis!</p>
+        </article>
+    </section>
+    <footer>
+        <div class="underline_top"></div>
+        <div class="container_footer">
+            <div class="foot">
+                <i class="fas fa-shipping-fast"></i>
+                    <div class="foot_description">
+                        <h4>Frais de Transport Offerts</h4>
+                        <p>Orinoco vous offre le transport. Profitez-en !!</p>
+                    </div>
+            </div>
+            <div class="foot">
+                <i class="fab fa-cc-mastercard"></i>
+                    <div class="foot_description">
+                        <h4>Paiement Sécurisé</h4>
+                        <p>Orinoco vous assure une transaction simple, rapide et en toute sécurité</p>
+                    </div>
+            </div>
+            <div class="foot">
+                <i class="fas fa-concierge-bell"></i>
+                    <div class="foot_description">
+                        <h4>Disponible 24/7</h4>
+                        <p>Orinoco est présent avant, pendant et après vos achats.</p>
+                    </div>
+            </div>
+        </div>
+        <div class="underline_bottom"></div>
+        <div class="social_medias">
+            <p>Orinoco</p>
+            <div class="banner">
+                <a href="https://www.facebook.com"></a><i class="fab fa-facebook-square"></i>
+                <a href="https://www.twitter.com"></a><i class="fab fa-twitter-square"></i>
+                <a href="https://www.instagram.com"></a><i class="fab fa-instagram"></i>
+                <a href="https://www.pinterest.com"></a><i class="fab fa-pinterest-square"></i>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
