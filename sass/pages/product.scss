@@ -1,0 +1,111 @@
+body{
+    & section {
+        & .h2product{
+            font-family: 'Srisakdi';
+            font-size: 3.5rem;
+            font-weight: 500;
+            width: auto;
+            white-space: wrap;
+            text-align: center;
+            padding: 0;
+        }
+        & .products{
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: space-around;
+            & .product{
+                max-width: 60%;
+                & img{
+                    max-width: 100%;
+                    object-fit: cover;
+                }
+            }
+            & .options{
+                padding: 10px;
+                max-width: 40%;
+                max-height: 100%;
+                display: flex;
+                text-align: start;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                & p{
+                    max-width: 90%;
+                }
+                & fieldset{
+                    border: 0;
+                    & .option{
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: space-around;
+                        align-items: center;
+                        align-content: center;
+                        & .varnish{
+                            margin: 10px;
+                            margin-top: 2rem;
+                            width: 150px;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                        }
+                        & .qty{
+                            margin: 10px;
+                            margin-top: 2rem;
+                        }
+                        & .validate{
+                            & #add_cart{
+                                height: 40px;
+                                width: 120px;
+                                margin: 10px;
+                                margin-top: 1rem;
+                                border: 0;
+                                background: none;
+                                box-shadow: none;
+                                border-radius: 0px;
+                                font-size: 1.2rem;
+                                text-decoration: none;
+                                background-color: var(--clr-primary);
+                                color: #fff;
+                                transition: 300ms ease-in-out;
+                                &:hover{
+                                    background-color: lighten($color: #3A1E09, $amount: 15%);
+                                }
+                            }
+    
+                        }
+                    }  
+                }
+            }
+        }
+        & .store_button_container{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 5rem;
+            & .store_button{
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                width: 180px;
+                height: 75px;
+                font-size: 1.2rem;
+                text-decoration: none;
+                background-color: var(--clr-primary);
+                color: #fff;
+                padding-left: 1rem;
+                transition: 300ms ease-in-out;
+                &:hover{
+                    background-color: lighten($color: #3A1E09, $amount: 15%);
+                }
+                & i{
+                    padding-right: 1rem;
+                }
+            }
+        }
+    }
+}

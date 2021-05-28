@@ -251,6 +251,10 @@ body .hero .store_button_container .store_button {
   background-color: var(--clr-primary);
   color: #fff;
   padding-left: 1rem;
+  transition: 300ms ease-in-out;
+}
+body .hero .store_button_container .store_button:hover {
+  background-color: #7c4013;
 }
 body .hero .store_button_container .store_button i {
   padding-right: 1rem;
@@ -283,10 +287,11 @@ body article .store .cards .card {
   margin-top: 3rem;
   background-color: transparent;
   border-radius: 5px;
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15), 3px 3px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 3px 3px 6px rgba(0, 0, 0, 0.15);
+  transition: 250ms ease-in-out;
 }
 body article .store .cards .card:hover {
-  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15), 6px 6px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3), 6px 6px 12px rgba(0, 0, 0, 0.15);
   cursor: url(./images/hammer-solid.png);
 }
 body article .store .cards .card h4 {
@@ -529,7 +534,7 @@ body section .carousel_nav > label {
   height: 20px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 660px) {
   body header .menu-wrap .toggler {
     top: 0;
     left: 0;
@@ -571,36 +576,44 @@ body section .carousel_nav > label {
   body header .underline {
     margin-top: 1.5rem;
   }
-  body .hero {
+  body section .hero {
     max-width: 600px;
   }
-  body .hero h2 {
+  body section .hero h2 {
     font-size: 2.5rem;
   }
-  body .hero .h2top {
+  body section .hero .h2top {
     padding-left: 2%;
     padding-right: 0;
   }
-  body .hero .h2bottom {
+  body section .hero .h2bottom {
     padding-right: 2%;
     padding-left: 0;
   }
-  body .hero p {
+  body section .hero p {
     margin: 1rem;
     padding: 0;
     width: auto;
   }
-  body .hero .container {
+  body section .hero .container {
     min-height: 250px;
     max-height: 350px;
     height: 100%;
     width: 100%;
   }
-  body .hero .container .carousel {
+  body section .hero .container .carousel {
     min-height: 250px;
     max-height: 350px;
     height: 100%;
     width: 100%;
+  }
+  body section .products {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+  body section .products fieldset {
+    flex-direction: column;
   }
   body article #our_collection {
     width: auto;
@@ -642,6 +655,116 @@ body section .carousel_nav > label {
   body footer .social_medias .banner {
     width: 98%;
   }
+}
+body .h2validation {
+  white-space: wrap;
+  text-align: center;
+  padding: 0;
+}
+
+body section .h2product {
+  font-family: "Srisakdi";
+  font-size: 3.5rem;
+  font-weight: 500;
+  width: auto;
+  white-space: wrap;
+  text-align: center;
+  padding: 0;
+}
+body section .products {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-around;
+}
+body section .products .product {
+  max-width: 60%;
+}
+body section .products .product img {
+  max-width: 100%;
+  object-fit: cover;
+}
+body section .products .options {
+  padding: 10px;
+  max-width: 40%;
+  max-height: 100%;
+  display: flex;
+  text-align: start;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+body section .products .options p {
+  max-width: 90%;
+}
+body section .products .options fieldset {
+  border: 0;
+}
+body section .products .options fieldset .option {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+body section .products .options fieldset .option .varnish {
+  margin: 10px;
+  margin-top: 2rem;
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+body section .products .options fieldset .option .qty {
+  margin: 10px;
+  margin-top: 2rem;
+}
+body section .products .options fieldset .option .validate #add_cart {
+  height: 40px;
+  width: 120px;
+  margin: 10px;
+  margin-top: 1rem;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 0px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  background-color: var(--clr-primary);
+  color: #fff;
+  transition: 300ms ease-in-out;
+}
+body section .products .options fieldset .option .validate #add_cart:hover {
+  background-color: #7c4013;
+}
+body section .store_button_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+body section .store_button_container .store_button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 180px;
+  height: 75px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  background-color: var(--clr-primary);
+  color: #fff;
+  padding-left: 1rem;
+  transition: 300ms ease-in-out;
+}
+body section .store_button_container .store_button:hover {
+  background-color: #7c4013;
+}
+body section .store_button_container .store_button i {
+  padding-right: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

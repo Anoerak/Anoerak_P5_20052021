@@ -42,6 +42,10 @@ body{
                 background-color: var(--clr-primary);
                 color: #fff;
                 padding-left: 1rem;
+                transition: 300ms ease-in-out;
+                &:hover{
+                    background-color: lighten($color: #3A1E09, $amount: 15%);
+                }
                 & i{
                     padding-right: 1rem;
                 }
@@ -76,9 +80,10 @@ body{
                 margin-top: 3rem;
                 background-color: transparent;
                 border-radius: 5px;
-                box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15),3px 3px 6px rgba(0, 0, 0, 0.05);;
+                box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.30),3px 3px 6px rgba(0, 0, 0, 0.15);;
+                transition: 250ms ease-in-out;
                 &:hover{
-                    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15),6px 6px 12px rgba(0, 0, 0, 0.05);;
+                    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.30),6px 6px 12px rgba(0, 0, 0, 0.15);;
                     cursor: url(./images/hammer-solid.png);
                 }
                 & h4{
