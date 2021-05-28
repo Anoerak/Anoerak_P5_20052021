@@ -15,7 +15,7 @@
         > input[type="radio"] {
           position: absolute;
           left: 0;
-          display: 0;
+          display: none;
           top: 0;
 
           &:checked {

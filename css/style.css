@@ -393,7 +393,7 @@ body section .carousel {
 body section .carousel > input[type=radio] {
   position: absolute;
   left: 0;
-  display: 0;
+  display: none;
   top: 0;
 }
 body section .carousel > input[type=radio]:checked ~ .carousel_items .carousel_item,
