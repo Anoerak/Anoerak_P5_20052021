@@ -1,0 +1,128 @@
+@media screen and (max-width: 600px) {
+    body{
+        header{
+            & .menu-wrap{
+                & .toggler{
+                    top: 0;
+                    left: 0;
+                    width: 60px;
+                    height: 60px;
+                }
+                & .hamburger{
+                    top: 5px;
+                    left: 5px;
+                    width: 30px;
+                    height: 30px;
+                }
+                & .menu{
+                    & > div{
+                        margin-top: 177px;
+                        margin-left: 2%;
+                    }
+                }
+            }
+            & .header{
+                padding: 0;
+                margin: auto;
+                height: auto;
+                width: auto;
+                flex-direction: column;
+                & > div{
+                    display: none;
+                }
+                & h1{
+                    margin-left: -1.5rem;
+                    margin-right: 0;
+                    font-size: 2.5rem;
+                    margin-bottom: 2rem;
+                    margin-top: 1rem;
+                }
+                & .navbar {
+                    justify-content: space-around;
+                    max-width: 100%;
+                    width: 100%;
+                }
+            }
+            & .underline{
+                margin-top: 1.5rem;
+            }
+        }
+        & .hero{
+            max-width: 600px;
+            & h2{
+                font-size: 2.5rem;
+            }
+            & .h2top{
+                padding-left: 2%;
+                padding-right: 0;
+            }
+            & .h2bottom{
+                padding-right: 2%;
+                padding-left: 0;
+            }
+            & p{
+                margin: 1rem;
+                padding: 0;
+                width: auto;
+            }
+            & .container{
+                min-height: 250px;
+                max-height: 350px;
+                height: 100%;
+                width: 100%;
+                & .carousel{
+                min-height: 250px;
+                max-height: 350px;
+                height: 100%;
+                width: 100%;
+                }
+            }
+        }
+        & article{
+            & #our_collection{
+                width: auto;
+                font-size: 2.5rem;
+                margin-top: 3.5rem;
+            }
+            & .store {
+                .cards{
+                    width: auto;
+                    flex-direction: column;
+                    & .card{
+                        max-width: 350px;
+                        max-height: 230px;
+                        margin: 2.5rem 0;
+                        & img{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            & .history{
+                width: auto;
+                margin: 1rem;
+                padding: 0;
+            }
+        }
+        & footer{
+            height: auto;
+            & .container_footer{
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                & .foot{
+                    margin: 1rem 0;
+                    max-width: 98%;
+                    max-height: 33%;
+                }
+            }
+            & .social_medias{
+                & p{
+                    font-size: 2.5rem;
+                }
+                & .banner{
+                    width: 98%;
+                }
+            }
+        }
+    }
+}
