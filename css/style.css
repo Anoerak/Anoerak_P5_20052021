@@ -261,15 +261,14 @@ body .hero .store_button_container {
 body .hero .store_button_container .store_button {
   display: flex;
   align-items: center;
-  align-content: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 180px;
   height: 75px;
   font-size: 1.2rem;
   text-decoration: none;
   background-color: var(--clr-primary);
   color: #fff;
-  padding-left: 1rem;
+  padding: 0 1rem;
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 3px 3px 6px rgba(0, 0, 0, 0.15);
   transition: 300ms ease-in-out;
 }
@@ -278,13 +277,9 @@ body .hero .store_button_container .store_button:hover {
   box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3), 3px 3px 12px rgba(0, 0, 0, 0.15);
 }
 body .hero .store_button_container .store_button:active {
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 3px 3px 6px rgba(0, 0, 0, 0.15);
-}
-body .hero .store_button_container .store_button i {
-  padding-right: 1rem;
+  box-shadow: 0px 0px 0px;
 }
 body article #our_collection {
-  width: 100%;
   font-family: "Srisakdi";
   font-weight: 600;
   font-size: 3rem;
@@ -319,7 +314,7 @@ body article .store .cards .card:hover {
   cursor: url(./images/hammer-solid.png);
 }
 body article .store .cards .card:active {
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 3px 3px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 0px;
 }
 body article .store .cards .card h4 {
   font-size: 1.25rem;
@@ -601,7 +596,7 @@ body section .carousel_nav > label {
     display: none;
   }
   body header .header h1 {
-    margin-left: -1.5rem;
+    margin-left: -5rem;
     margin-right: 0;
     font-size: 2.5rem;
     margin-bottom: 2rem;
@@ -614,6 +609,14 @@ body section .carousel_nav > label {
   }
   body header .underline {
     margin-top: 1.5rem;
+  }
+  body section h2.h2cart {
+    font-size: 2.5rem;
+    text-decoration: underline;
+  }
+  body section h2.h2product {
+    font-size: 2.5rem;
+    text-decoration: underline;
   }
   body section div.products {
     flex-direction: column;
@@ -649,11 +652,17 @@ body section .carousel_nav > label {
   body section div.products .options fieldset .option .qty label {
     margin-right: 1rem;
   }
+  body section div.products .options fieldset .option .qty input {
+    width: 30px;
+  }
   body section div.products .options fieldset .option .validate {
     width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 1.5rem;
+  }
+  body section div.products .options fieldset .option .tarif {
+    width: 100%;
   }
   body section .hero {
     max-width: 600px;
@@ -698,6 +707,20 @@ body section .carousel_nav > label {
   body section .carousel_next > label {
     top: 37%;
   }
+  body section div.cart_card {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    max-width: 98%;
+    max-height: none;
+  }
+  body section div.cart_card .product_infos .card_bottom .cart_modifications {
+    flex-direction: column;
+    min-height: 4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
   body article #our_collection {
     width: auto;
     font-size: 2.5rem;
@@ -739,7 +762,8 @@ body section .carousel_nav > label {
     width: 98%;
   }
 }
-body .h2validation {
+body section .hero .h2validation {
+  font-size: 2rem;
   white-space: wrap;
   text-align: center;
   padding: 0;
@@ -797,7 +821,7 @@ body section .products .options fieldset .option {
 body section .products .options fieldset .option .varnish {
   margin: 10px;
   margin-top: 2rem;
-  width: 150px;
+  min-width: 150px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -805,6 +829,19 @@ body section .products .options fieldset .option .varnish {
 body section .products .options fieldset .option .qty {
   margin: 10px;
   margin-top: 2rem;
+  min-width: 150px;
+}
+body section .products .options fieldset .option .tarif {
+  margin: 10px;
+  margin-top: 2rem;
+  font-weight: 600;
+  min-width: 150px;
+  display: flex;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+body section .products .options fieldset .option .validate {
+  min-width: 150px;
 }
 body section .products .options fieldset .option .validate #add_cart {
   height: 40px;
@@ -826,6 +863,9 @@ body section .products .options fieldset .option .validate #add_cart:hover {
   background-color: #663510;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3), 2px 2px 8px rgba(0, 0, 0, 0.15);
 }
+body section .products .options fieldset .option .validate #add_cart:active {
+  box-shadow: 0px 0px 0px;
+}
 body section .store_button_container {
   width: 100%;
   display: flex;
@@ -835,20 +875,23 @@ body section .store_button_container {
 body section .store_button_container .store_button {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 180px;
   height: 75px;
   font-size: 1.2rem;
   text-decoration: none;
   background-color: var(--clr-primary);
   color: #fff;
-  padding-left: 1rem;
+  padding: 0px 1rem;
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 3px 3px 6px rgba(0, 0, 0, 0.15);
   transition: 300ms ease-in-out;
 }
 body section .store_button_container .store_button:hover {
   background-color: #663510;
   box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3), 3px 3px 12px rgba(0, 0, 0, 0.15);
+}
+body section .store_button_container .store_button:active {
+  box-shadow: 0px 0px 0px;
 }
 body section .store_button_container .store_button i {
   padding-right: 1rem;
@@ -879,6 +922,7 @@ body section .cart_card {
   max-height: 150px;
 }
 body section .cart_card img {
+  max-width: 40%;
   margin: 0px 10px;
   object-fit: contain;
 }
@@ -1002,6 +1046,44 @@ body section .subtotal .subtotal_area h4 {
 }
 body section .subtotal .underline {
   margin: 1rem 0;
+}
+
+@media screen and (min-width: 660px) and (max-width: 980px) {
+  body section div.products .options fieldset .option {
+    margin-top: auto;
+    flex-direction: row;
+  }
+  body section div.products .options fieldset .option .varnish {
+    min-width: 100px;
+  }
+  body section div.products .options fieldset .option .varnish p {
+    margin-right: 10px;
+  }
+  body section div.products .options fieldset .option .qty {
+    min-width: 100px;
+  }
+  body section div.products .options fieldset .option .validate {
+    min-width: 100px;
+  }
+  body section div.products .options fieldset .option .tarif {
+    min-width: 100px;
+  }
+  body section fieldset {
+    max-width: 100%;
+  }
+  body section .cart_card {
+    max-height: 230px;
+    max-width: 98%;
+  }
+  body section .cart_card img {
+    max-width: 40%;
+  }
+  body section .cart_card .product_infos .card_bottom .cart_modifications {
+    flex-direction: column;
+    min-height: 4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

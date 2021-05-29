@@ -31,7 +31,7 @@
                     display: none;
                 }
                 & h1{
-                    margin-left: -1.5rem;
+                    margin-left: -5rem;
                     margin-right: 0;
                     font-size: 2.5rem;
                     margin-bottom: 2rem;
@@ -48,6 +48,14 @@
             }
         }
         & section {
+            & h2.h2cart{
+                font-size: 2.5rem;
+                text-decoration: underline;
+            }
+            & h2.h2product{
+                font-size: 2.5rem;
+                text-decoration: underline;
+            }
             & div.products{
                 flex-direction: column;
                 align-items: center;
@@ -77,12 +85,18 @@
                                 & label{
                                     margin-right: 1rem;
                                 }
+                                & input{
+                                    width: 30px;
+                                }
                             }
                             & .validate{
                                 width: 100%;
                                 display: flex;
                                 justify-content: center;
                                 margin-top: 1.5rem;
+                            }
+                            & .tarif{
+                                width: 100%;
                             }
                         }
                     }
@@ -131,6 +145,21 @@
             & .carousel_next > label{
                 top: 37%;
             }
+            & div.cart_card{
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                max-width: 98%;
+                max-height: none;
+                & .product_infos .card_bottom .cart_modifications {
+                    flex-direction: column;  
+                    min-height: 4rem;   
+                    margin-top: 1rem;  
+                    margin-bottom: 1rem;             
+                }
+            }
+
         }
         & article{
             & #our_collection{

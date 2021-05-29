@@ -1,7 +1,12 @@
 body{
-    & .h2validation{
-        white-space: wrap;
-        text-align: center;
-        padding: 0;
+    & section{
+        & .hero{
+            & .h2validation{
+                font-size: 2rem;
+                white-space: wrap;
+                text-align: center;
+                padding: 0;
+            }        
+        }
     }
 }

@@ -1,0 +1,47 @@
+@media screen and (min-width: 660px) and (max-width: 980px) {
+    body{
+        & section {
+            & div.products{
+                & .options{
+                    fieldset{
+                        & .option{
+                            margin-top: auto;
+                            flex-direction: row;
+                            & .varnish {
+                                min-width: 100px;
+                                & p{
+                                    margin-right: 10px;
+                                }
+                            }
+                            & .qty{
+                                min-width: 100px;
+                            }
+                            & .validate{
+                                min-width: 100px;
+                            }
+                            & .tarif{
+                                min-width: 100px;
+                            }
+                        }
+                    }
+                }
+            }
+            & fieldset{
+                max-width: 100%;
+            }
+            & .cart_card{
+                max-height: 230px;
+                max-width: 98%;
+                & img{
+                    max-width: 40%;
+                }
+                & .product_infos .card_bottom .cart_modifications {
+                    flex-direction: column;  
+                    min-height: 4rem;   
+                    margin-top: 1rem;  
+                    margin-bottom: 1rem;             
+                }
+            }
+        }
+    }
+}
