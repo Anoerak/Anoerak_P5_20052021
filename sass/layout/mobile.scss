@@ -48,6 +48,46 @@
             }
         }
         & section {
+            & div.products{
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                & .product{
+                    max-width: 98%;
+                }
+                & .options{
+                    max-width: 98%;
+                    fieldset{
+                        width: 100%;
+                        & .option{
+                            justify-content: space-between;
+                            & .varnish {
+                                min-width: 40%;
+                                justify-content: flex-start;
+                                & p{
+                                    margin-right: 1rem;
+                                }
+                            }
+                            & .qty{
+                                display: flex;
+                                min-width: 40%;
+                                justify-content: flex-end;
+                                right: 0;
+                                & label{
+                                    margin-right: 1rem;
+                                }
+                            }
+                            & .validate{
+                                width: 100%;
+                                display: flex;
+                                justify-content: center;
+                                margin-top: 1.5rem;
+                            }
+                        }
+                    }
+                }
+            }
             & .hero{
                 max-width: 600px;
                 & h2{
@@ -72,20 +112,24 @@
                     height: 100%;
                     width: 100%;
                     & .carousel{
-                    min-height: 250px;
-                    max-height: 350px;
-                    height: 100%;
-                    width: 100%;
+                        min-height: 250px;
+                        max-height: 350px;
+                        height: 100%;
+                        width: 100%;
+                        & .carousel_nav{
+                            display: none;
+                            & > label{
+                                border: var(--clr-primary);
+                            }                   
+                        }
                     }
                 }
             }
-            & .products{
-                display: flex;
-                flex-direction: column;
-                align-self: center;
-                & fieldset{
-                    flex-direction: column;
-                }
+            & .carousel_prev > label {
+                top: 37%;
+            }
+            & .carousel_next > label{
+                top: 37%;
             }
         }
         & article{

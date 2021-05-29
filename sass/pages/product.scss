@@ -72,8 +72,10 @@ body{
                                 background-color: var(--clr-primary);
                                 color: #fff;
                                 transition: 300ms ease-in-out;
+                                box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.30), 2px 2px 4px rgba(0, 0, 0, 0.15);
                                 &:hover{
-                                    background-color: lighten($color: #3A1E09, $amount: 15%);
+                                    background-color: lighten($color: #3A1E09, $amount: 10%);
+                                    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.30), 2px 2px 8px rgba(0, 0, 0, 0.15);
                                 }
                             }
     
@@ -98,9 +100,11 @@ body{
                 background-color: var(--clr-primary);
                 color: #fff;
                 padding-left: 1rem;
+                box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.30), 3px 3px 6px rgba(0, 0, 0, 0.15);
                 transition: 300ms ease-in-out;
                 &:hover{
-                    background-color: lighten($color: #3A1E09, $amount: 15%);
+                    background-color: lighten($color: #3A1E09, $amount: 10%);
+                    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.30), 3px 3px 12px rgba(0, 0, 0, 0.15);
                 }
                 & i{
                     padding-right: 1rem;

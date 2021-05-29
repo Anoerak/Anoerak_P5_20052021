@@ -196,6 +196,10 @@ body .header .navbar li {
   padding: 5px;
   font-size: 20px;
   margin: 0px 10px auto;
+  transition: 300ms ease-in-out;
+}
+body .header .navbar li:hover {
+  background-color: var(--clr-secondary);
 }
 body .underline {
   height: 1px;
@@ -243,6 +247,7 @@ body .hero .store_button_container {
 body .hero .store_button_container .store_button {
   display: flex;
   align-items: center;
+  align-content: center;
   justify-content: space-around;
   width: 180px;
   height: 75px;
@@ -251,10 +256,12 @@ body .hero .store_button_container .store_button {
   background-color: var(--clr-primary);
   color: #fff;
   padding-left: 1rem;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 3px 3px 6px rgba(0, 0, 0, 0.15);
   transition: 300ms ease-in-out;
 }
 body .hero .store_button_container .store_button:hover {
-  background-color: #7c4013;
+  background-color: #663510;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3), 3px 3px 12px rgba(0, 0, 0, 0.15);
 }
 body .hero .store_button_container .store_button i {
   padding-right: 1rem;
@@ -375,8 +382,19 @@ body footer .social_medias .banner {
   align-items: center;
   justify-content: space-evenly;
 }
+body footer .social_medias .banner a {
+  font-size: 3rem;
+  text-decoration: none;
+  color: var(--clr-primary);
+}
 body footer .social_medias .banner i {
-  font-size: 2rem;
+  font-size: 2.2rem;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+body footer .social_medias .banner i:hover {
+  transform: scale(1.15);
+  color: #663510;
 }
 
 body section .carousel > input[type=radio]:nth-child(5):checked ~ .carousel_next > label:nth-child(1), body section .carousel > input[type=radio]:nth-child(5):checked ~ .carousel_prev > label:nth-child(4), body section .carousel > input[type=radio]:nth-child(4):checked ~ .carousel_next > label:nth-child(5), body section .carousel > input[type=radio]:nth-child(4):checked ~ .carousel_prev > label:nth-child(3), body section .carousel > input[type=radio]:nth-child(3):checked ~ .carousel_next > label:nth-child(4), body section .carousel > input[type=radio]:nth-child(3):checked ~ .carousel_prev > label:nth-child(2), body section .carousel > input[type=radio]:nth-child(2):checked ~ .carousel_next > label:nth-child(3), body section .carousel > input[type=radio]:nth-child(2):checked ~ .carousel_prev > label:nth-child(1), body section .carousel > input[type=radio]:nth-child(1):checked ~ .carousel_next > label:nth-child(2), body section .carousel > input[type=radio]:nth-child(1):checked ~ .carousel_prev > label:nth-child(5) {
@@ -467,6 +485,7 @@ body section .carousel_item {
 body section .carousel_item img {
   width: 100%;
   vertical-align: middle;
+  object-fit: scale-down;
 }
 body section .carousel_prev > label, body section .carousel_next > label {
   border: 1px solid #fff;
@@ -576,6 +595,46 @@ body section .carousel_nav > label {
   body header .underline {
     margin-top: 1.5rem;
   }
+  body section div.products {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  body section div.products .product {
+    max-width: 98%;
+  }
+  body section div.products .options {
+    max-width: 98%;
+  }
+  body section div.products .options fieldset {
+    width: 100%;
+  }
+  body section div.products .options fieldset .option {
+    justify-content: space-between;
+  }
+  body section div.products .options fieldset .option .varnish {
+    min-width: 40%;
+    justify-content: flex-start;
+  }
+  body section div.products .options fieldset .option .varnish p {
+    margin-right: 1rem;
+  }
+  body section div.products .options fieldset .option .qty {
+    display: flex;
+    min-width: 40%;
+    justify-content: flex-end;
+    right: 0;
+  }
+  body section div.products .options fieldset .option .qty label {
+    margin-right: 1rem;
+  }
+  body section div.products .options fieldset .option .validate {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
   body section .hero {
     max-width: 600px;
   }
@@ -607,13 +666,17 @@ body section .carousel_nav > label {
     height: 100%;
     width: 100%;
   }
-  body section .products {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
+  body section .hero .container .carousel .carousel_nav {
+    display: none;
   }
-  body section .products fieldset {
-    flex-direction: column;
+  body section .hero .container .carousel .carousel_nav > label {
+    border: var(--clr-primary);
+  }
+  body section .carousel_prev > label {
+    top: 37%;
+  }
+  body section .carousel_next > label {
+    top: 37%;
   }
   body article #our_collection {
     width: auto;
@@ -737,9 +800,11 @@ body section .products .options fieldset .option .validate #add_cart {
   background-color: var(--clr-primary);
   color: #fff;
   transition: 300ms ease-in-out;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 2px 2px 4px rgba(0, 0, 0, 0.15);
 }
 body section .products .options fieldset .option .validate #add_cart:hover {
-  background-color: #7c4013;
+  background-color: #663510;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3), 2px 2px 8px rgba(0, 0, 0, 0.15);
 }
 body section .store_button_container {
   width: 100%;
@@ -758,10 +823,12 @@ body section .store_button_container .store_button {
   background-color: var(--clr-primary);
   color: #fff;
   padding-left: 1rem;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 3px 3px 6px rgba(0, 0, 0, 0.15);
   transition: 300ms ease-in-out;
 }
 body section .store_button_container .store_button:hover {
-  background-color: #7c4013;
+  background-color: #663510;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3), 3px 3px 12px rgba(0, 0, 0, 0.15);
 }
 body section .store_button_container .store_button i {
   padding-right: 1rem;
