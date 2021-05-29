@@ -49,6 +49,9 @@ body{
                     background-color: lighten($color: #3A1E09, $amount: 10%);
                     box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.30), 3px 3px 12px rgba(0, 0, 0, 0.15);
                 }
+                &:active{
+                    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.30), 3px 3px 6px rgba(0, 0, 0, 0.15);
+                }
                 & i{
                     padding-right: 1rem;
                 }
@@ -88,6 +91,9 @@ body{
                 &:hover{
                     box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.30),6px 6px 12px rgba(0, 0, 0, 0.15);;
                     cursor: url(./images/hammer-solid.png);
+                }
+                &:active{
+                    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.30),3px 3px 6px rgba(0, 0, 0, 0.15);;
                 }
                 & h4{
                     font-size: 1.25rem;

@@ -5,6 +5,9 @@
   --clr-primary: #3A1E09;
   --clr-secondary: #D1CAC3;
   --clr-bg: #9D9691;
+  --clr-btn-save: #2f660f;
+  --clr-btn-update: #0f6662;
+  --clr-btn-delete: #660f0f;
 }
 
 * {
@@ -178,6 +181,10 @@ body .header h1 {
   margin-left: max(65px, 15%);
   font-size: 4rem;
 }
+body .header h1 a {
+  text-decoration: none;
+  color: var(--clr-primary);
+}
 body .header .navbar {
   max-width: 30%;
   display: flex;
@@ -196,10 +203,17 @@ body .header .navbar li {
   padding: 5px;
   font-size: 20px;
   margin: 0px 10px auto;
-  transition: 300ms ease-in-out;
+  transition: 200ms ease-in-out;
 }
 body .header .navbar li:hover {
-  background-color: var(--clr-secondary);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+body .header .navbar li:active {
+  box-shadow: 0px 0px 0px;
+}
+body .header .navbar li a {
+  color: var(--clr-primary);
+  text-decoration: none;
 }
 body .underline {
   height: 1px;
@@ -263,6 +277,9 @@ body .hero .store_button_container .store_button:hover {
   background-color: #663510;
   box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3), 3px 3px 12px rgba(0, 0, 0, 0.15);
 }
+body .hero .store_button_container .store_button:active {
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 3px 3px 6px rgba(0, 0, 0, 0.15);
+}
 body .hero .store_button_container .store_button i {
   padding-right: 1rem;
 }
@@ -300,6 +317,9 @@ body article .store .cards .card {
 body article .store .cards .card:hover {
   box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3), 6px 6px 12px rgba(0, 0, 0, 0.15);
   cursor: url(./images/hammer-solid.png);
+}
+body article .store .cards .card:active {
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 3px 3px 6px rgba(0, 0, 0, 0.15);
 }
 body article .store .cards .card h4 {
   font-size: 1.25rem;
@@ -832,6 +852,156 @@ body section .store_button_container .store_button:hover {
 }
 body section .store_button_container .store_button i {
   padding-right: 1rem;
+}
+
+body section div.underline {
+  margin-bottom: 2rem;
+}
+body section div.underline .cart_table .underline {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+body section .h2cart {
+  font-family: "Srisakdi";
+  font-size: 3.5rem;
+  font-weight: 500;
+  width: auto;
+  white-space: wrap;
+  text-align: center;
+  padding: 0;
+}
+body section fieldset {
+  border: 0;
+}
+body section .cart_card {
+  display: flex;
+  flex-direction: row;
+  max-height: 150px;
+}
+body section .cart_card img {
+  margin: 0px 10px;
+  object-fit: contain;
+}
+body section .cart_card .product_infos {
+  flex-direction: column;
+  margin: 0rem 1rem;
+}
+body section .cart_card .product_infos .product_title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+body section .cart_card .product_infos .product_title h3 {
+  font-size: 1.5rem;
+}
+body section .cart_card .product_infos .product_title p {
+  margin-right: 5%;
+}
+body section .cart_card .product_infos .underline {
+  margin: 0.3rem 0;
+}
+body section .cart_card .product_infos .card_bottom {
+  align-items: stretch;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body section .cart_card .product_infos .card_bottom p {
+  font-size: 0.9rem;
+}
+body section .cart_card .product_infos .card_bottom .cart_modifications {
+  display: flex;
+  justify-content: space-between;
+}
+body section .cart_card .product_infos .card_bottom .cart_modifications input {
+  width: 25px;
+  height: 15px;
+}
+body section .cart_card .product_infos .card_bottom .cart_modifications .product_numbers {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+body section .cart_card .product_infos .card_bottom .cart_modifications .product_numbers p {
+  margin-left: 1.5rem;
+  font-size: 1rem;
+}
+body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons {
+  display: flex;
+  justify-content: space-around;
+  min-width: 250px;
+}
+body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons .cart_save {
+  width: 75px;
+  height: 25px;
+  border: none;
+  background-color: var(--clr-btn-save);
+  font-family: "Mina";
+  color: #fff;
+  transition: 200ms ease-in-out;
+}
+body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons .cart_save:hover {
+  background-color: #439216;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15), 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons .cart_save:active {
+  box-shadow: 0px 0px 0px;
+}
+body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons .cart_update {
+  width: 75px;
+  height: 25px;
+  border: none;
+  background-color: var(--clr-btn-update);
+  font-family: "Mina";
+  color: #fff;
+  transition: 200ms ease-in-out;
+}
+body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons .cart_update:hover {
+  background-color: #16928d;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15), 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons .cart_update:active {
+  box-shadow: 0px 0px 0px;
+}
+body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons .cart_delete {
+  width: 75px;
+  height: 25px;
+  border: none;
+  background-color: var(--clr-btn-delete);
+  font-family: "Mina";
+  color: #fff;
+  transition: 200ms ease-in-out;
+}
+body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons .cart_delete:hover {
+  background-color: #921616;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15), 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons .cart_delete:active {
+  box-shadow: 0px 0px 0px;
+}
+body section .subtotal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 2rem;
+}
+body section .subtotal .subtotal_area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  min-height: 100px;
+  min-width: 250px;
+}
+body section .subtotal .subtotal_area h4 {
+  font-size: 1rem;
+  font-weight: 300;
+}
+body section .subtotal .underline {
+  margin: 1rem 0;
 }
 
 /*# sourceMappingURL=style.css.map */
