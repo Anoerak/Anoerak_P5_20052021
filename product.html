@@ -15,7 +15,7 @@
 
     <title>Orifurniture, Confirmation de commande</title>
 </head>
-<body>
+<body id="product">
     <header id="home">
         <div class="menu-wrap">
             <input type="checkbox" class="toggler">
@@ -48,76 +48,91 @@
         <div class="underline"></div>
     </header>
     <section>
-        <h2 class="h2product">Cross Table</h2>
+        <h2 id="name" class="h2product"></h2>
             <div class="products">
                 <div class="product">
-                    <img src="./images/oak_1.jpg" alt="meuble table bois clair">
+                    <img id="photo" alt="meuble_table_bois_clair">
                 </div>
                 <div class="options">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum nisi dolorum sapiente quo exercitationem, inventore cupiditate reiciendis numquam cum repellendus eveniet consequuntur voluptatibus obcaecati rem tenetur quos est deleniti. Quaerat?</p>
+                    <p id="description" ></p>
                     <fieldset>
                         <div class="option">
                             <div class="varnish">
                             <p>Teintes</p>
-                                <select name="varnish" id="varnish">
-                                    <option value="tan">tan</option>
-                                    <option value="chocolate">chocolate</option>
-                                    <option value="black">black</option>
-                                    <option value="white" selected>white</option>
+                                <select name="varnish" id="optionv">
+                                    <option value="0"></option>
+                                    <option value="1"></option>
+                                    <option value="2"></option>
+                                    <option value="3"></option>
                                 </select>
                             </div>
                             <div class="qty">
-                                <label for="quantity">Quantité</label>
-                                <input type="number" name="quantity" id="quantity" min="0" max="20" step="1" autofocus  /> 
+                                <label>Quantité: 
+                                    <select name="quantity" id="quantity">
+                                        <option value="0" selected>0</option>
+                                        <option value="1" >1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>                                                    
+                                </label>
                             </div>
                             <div class="tarif">
-                                <p><span class="tarif_tag">599.00</span>€</p>
+                                <p><span id="price" class="tarif_tag"></span></p>
                             </div>
                             <div class="validate">
-                                <input type="button" value="Valider" id="add_cart">
+                                <input type="button" value="Ajouter" id="add_cart">
                             </div>
                         </div>
                     </fieldset>
                 </div>
             </div>
             <div class="store_button_container">
-                <a href="./index.html" class="store_button"><i class="fas fa-home"></i>Accueil</a>
+                <a id="ajouter" href="./index.html#our_collection" class="store_button"><i class="fas fa-store"></i>Boutique</a>
             </div>
-        <footer id="contact_us">
-            <div class="underline_top"></div>
-            <div class="container_footer">
-                <div class="foot">
-                    <i class="fas fa-shipping-fast"></i>
-                        <div class="foot_description">
-                            <h4>Frais de Transport Offerts</h4>
-                            <p>Orinoco vous offre le transport. Profitez-en !!</p>
-                        </div>
-                </div>
-                <div class="foot">
-                    <i class="fab fa-cc-mastercard"></i>
-                        <div class="foot_description">
-                            <h4>Paiement Sécurisé</h4>
-                            <p>Orinoco vous assure une transaction simple, rapide et en toute sécurité</p>
-                        </div>
-                </div>
-                <div class="foot">
-                    <i class="fas fa-concierge-bell"></i>
-                        <div class="foot_description">
-                            <h4>Disponible 24/7</h4>
-                            <p>Orinoco est présent avant, pendant et après vos achats.</p>
-                        </div>
-                </div>
+    </section>
+    <footer id="contact_us">
+        <div class="underline_top"></div>
+        <div class="container_footer">
+            <div class="foot">
+                <i class="fas fa-shipping-fast"></i>
+                    <div class="foot_description">
+                        <h4>Frais de Transport Offerts</h4>
+                        <p>Orinoco vous offre le transport. Profitez-en !!</p>
+                    </div>
             </div>
-            <div class="underline_bottom"></div>
-            <div class="social_medias">
-                <p>Orinoco</p>
-                <div class="banner">
-                    <a href="https://www.facebook.com"></a><i class="fab fa-facebook-square"></i>
-                    <a href="https://www.twitter.com"></a><i class="fab fa-twitter-square"></i>
-                    <a href="https://www.instagram.com"></a><i class="fab fa-instagram"></i>
-                    <a href="https://www.pinterest.com"></a><i class="fab fa-pinterest-square"></i>
-                </div>
+            <div class="foot">
+                <i class="fab fa-cc-mastercard"></i>
+                    <div class="foot_description">
+                        <h4>Paiement Sécurisé</h4>
+                        <p>Orinoco vous assure une transaction simple, rapide et en toute sécurité</p>
+                    </div>
             </div>
-        </footer>
+            <div class="foot">
+                <i class="fas fa-concierge-bell"></i>
+                    <div class="foot_description">
+                        <h4>Disponible 24/7</h4>
+                        <p>Orinoco est présent avant, pendant et après vos achats.</p>
+                    </div>
+            </div>
+        </div>
+        <div class="underline_bottom"></div>
+        <div class="social_medias">
+            <p>Orinoco</p>
+            <div class="banner">
+                <a href="https://www.facebook.com"></a><i class="fab fa-facebook-square"></i>
+                <a href="https://www.twitter.com"></a><i class="fab fa-twitter-square"></i>
+                <a href="https://www.instagram.com"></a><i class="fab fa-instagram"></i>
+                <a href="https://www.pinterest.com"></a><i class="fab fa-pinterest-square"></i>
+            </div>
+        </div>
+    </footer>
+    <script src="./JS/script.js"></script>
 </body>
 </html>
