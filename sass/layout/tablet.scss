@@ -39,8 +39,41 @@
                     flex-direction: column;  
                     min-height: 4rem;   
                     margin-top: 1rem;  
-                    margin-bottom: 1rem;             
+                    margin-bottom: 1rem;  
+                    margin-top: 1rem;
+                    & .product_numbers{
+                        margin-top: 1rem;
+                        justify-items: flex-start;
+                        & p{
+                            text-align: left;
+                            display: flex;
+                            flex-direction: column;
+                            width: 25%;                            
+                        }
+                    }
+                    & .cart_buttons{
+                        margin: 0.5rem 0 0 0;
+                    }          
                 }
+            }
+            & div.underline{
+                margin-top: 4rem;
+            }
+            & .forms{
+                & #inscription{
+                    
+                    & p{
+                        width: 70%;
+                    }
+                }
+                & .shipment{
+                    min-width: 625px;
+                    max-width: 910px;
+                }
+                & .cart_save{
+                    position: absolute;
+                    right: 2rem;
+                }    
             }
         }
     }

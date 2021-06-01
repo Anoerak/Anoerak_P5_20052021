@@ -215,6 +215,17 @@ body .header .navbar li a {
   color: var(--clr-primary);
   text-decoration: none;
 }
+body .header .navbar li #cart_alert {
+  color: var(--clr-primary);
+  margin: auto;
+  font-size: 0.9rem;
+  height: 1.25rem;
+  width: 1.2rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 1.8rem;
+  right: 4rem;
+}
 body .underline {
   height: 1px;
   width: 95%;
@@ -606,6 +617,10 @@ body section .carousel_nav > label {
     max-width: 100%;
     width: 100%;
   }
+  body header .header .navbar li #cart_alert {
+    top: 6.5rem;
+    right: 10rem;
+  }
   body header .underline {
     margin-top: 1.5rem;
   }
@@ -719,6 +734,81 @@ body section .carousel_nav > label {
     min-height: 4rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    margin-left: 1rem;
+  }
+  body section div.cart_card .product_infos .card_bottom .cart_modifications .product_numbers {
+    margin-top: 1rem;
+  }
+  body section div.cart_card .product_infos .card_bottom .cart_modifications .product_numbers p {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+  }
+  body section div.cart_card .product_infos .card_bottom .cart_modifications .cart_buttons {
+    margin-top: 1.5rem;
+    margin-right: 1rem;
+  }
+  body section div.cart_card .product_infos .underline {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+  body div.forms {
+    margin: 2rem 2rem 2rem 1rem;
+  }
+  body div.forms #inscription {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body div.forms #inscription p {
+    width: 70%;
+  }
+  body div.forms #inscription p input {
+    margin: 1rem 0;
+  }
+  body div.forms .shipment {
+    min-width: 350px;
+    width: 100%;
+    max-width: 910px;
+  }
+  body div.forms .shipment p {
+    width: 100%;
+  }
+  body div.forms .shipment p #firstname {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 1rem;
+  }
+  body div.forms .shipment p #lastname {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 1rem;
+  }
+  body div.forms .shipment p #address {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 1rem;
+  }
+  body div.forms .shipment p #cp {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 1rem;
+  }
+  body div.forms .shipment p #city {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 1rem;
+  }
+  body div.forms .shipment p #email {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 1rem;
+  }
+  body div.forms input.cart_save {
+    position: inherit;
+    margin-top: 2rem;
   }
   body article #our_collection {
     width: auto;
@@ -788,6 +878,7 @@ body section .products .product {
 }
 body section .products .product img {
   max-width: 100%;
+  max-height: 500px;
   object-fit: cover;
 }
 body section .products .options {
@@ -895,6 +986,7 @@ body section .store_button_container .store_button i {
 }
 
 body section div.underline {
+  margin-top: 1rem;
   margin-bottom: 2rem;
 }
 body section div.underline .cart_table .underline {
@@ -966,45 +1058,14 @@ body section .cart_card .product_infos .card_bottom .cart_modifications .product
   justify-content: space-between;
 }
 body section .cart_card .product_infos .card_bottom .cart_modifications .product_numbers p {
-  margin-left: 1.5rem;
+  margin-right: 1.5rem;
   font-size: 1rem;
 }
 body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   min-width: 250px;
-}
-body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons .cart_save {
-  width: 75px;
-  height: 25px;
-  border: none;
-  background-color: var(--clr-btn-save);
-  font-family: "Mina";
-  color: #fff;
-  transition: 200ms ease-in-out;
-}
-body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons .cart_save:hover {
-  background-color: #439216;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15), 2px 2px 8px rgba(0, 0, 0, 0.3);
-}
-body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons .cart_save:active {
-  box-shadow: 0px 0px 0px;
-}
-body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons .cart_update {
-  width: 75px;
-  height: 25px;
-  border: none;
-  background-color: var(--clr-btn-update);
-  font-family: "Mina";
-  color: #fff;
-  transition: 200ms ease-in-out;
-}
-body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons .cart_update:hover {
-  background-color: #16928d;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15), 2px 2px 8px rgba(0, 0, 0, 0.3);
-}
-body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons .cart_update:active {
-  box-shadow: 0px 0px 0px;
+  margin-right: 2rem;
 }
 body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons .cart_delete {
   width: 75px;
@@ -1026,7 +1087,7 @@ body section .subtotal {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-right: 2rem;
+  margin: 2rem;
 }
 body section .subtotal .subtotal_area {
   display: flex;
@@ -1041,7 +1102,134 @@ body section .subtotal .subtotal_area h4 {
   font-weight: 300;
 }
 body section .subtotal .underline {
-  margin: 1rem 0;
+  margin: 1rem;
+}
+body section .subtotal .cart_update {
+  width: 75px;
+  height: 25px;
+  border: none;
+  background-color: var(--clr-btn-update);
+  font-family: "Mina";
+  color: #fff;
+  transition: 200ms ease-in-out;
+}
+body section .subtotal .cart_update:hover {
+  background-color: #16928d;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15), 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+body section .subtotal .cart_update:active {
+  box-shadow: 0px 0px 0px;
+}
+body section .forms {
+  min-height: 250px;
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+body section .forms .underline {
+  margin: 1rem;
+}
+body section .forms #inscription p {
+  width: 70%;
+}
+body section .forms .intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0.5rem;
+}
+body section .forms .shipment {
+  max-width: 910px;
+  justify-content: center;
+  min-height: 250px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-items: center;
+}
+body section .forms .shipment p {
+  width: 50%;
+}
+body section .forms .shipment #firstname {
+  vertical-align: middle;
+  border-radius: 5px;
+  border: none;
+  min-height: 35px;
+  width: 50%;
+  max-width: 314px;
+  margin: 0 0.5rem;
+  padding-left: 0.2rem;
+}
+body section .forms .shipment #lastname {
+  vertical-align: middle;
+  border-radius: 5px;
+  border: none;
+  min-height: 35px;
+  max-width: 258px;
+  width: 40%;
+  margin: 0 0.5rem;
+  padding-left: 0.2rem;
+}
+body section .forms .shipment #address {
+  vertical-align: middle;
+  border-radius: 5px;
+  border: none;
+  min-height: 35px;
+  max-width: 588px;
+  width: 95%;
+  margin: 0 0.5rem;
+  padding-left: 0.2rem;
+}
+body section .forms .shipment #cp {
+  vertical-align: middle;
+  border-radius: 5px;
+  border: none;
+  min-height: 35px;
+  max-width: 130px;
+  width: 20%;
+  margin: 0 0.5rem;
+  padding-left: 0.2rem;
+}
+body section .forms .shipment #city {
+  vertical-align: middle;
+  border-radius: 5px;
+  border: none;
+  min-height: 35px;
+  max-width: 440px;
+  width: 70%;
+  margin: 0 0.5rem;
+  padding-left: 0.2rem;
+}
+body section .forms .shipment #email {
+  vertical-align: middle;
+  border-radius: 5px;
+  border: none;
+  min-height: 35px;
+  max-width: 588px;
+  width: 95%;
+  margin: 0 0.5rem;
+  padding-left: 0.2rem;
+}
+body section .forms .cart_save {
+  position: absolute;
+  right: 2rem;
+  width: 95px;
+  height: 32px;
+  border: none;
+  background-color: var(--clr-btn-save);
+  font-family: "Mina";
+  color: #fff;
+  transition: 200ms ease-in-out;
+}
+body section .forms .cart_save:hover {
+  background-color: #439216;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15), 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+body section .forms .cart_save:active {
+  box-shadow: 0px 0px 0px;
 }
 
 @media screen and (min-width: 660px) and (max-width: 980px) {
@@ -1079,6 +1267,34 @@ body section .subtotal .underline {
     min-height: 4rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  body section .cart_card .product_infos .card_bottom .cart_modifications .product_numbers {
+    margin-top: 1rem;
+    justify-items: flex-start;
+  }
+  body section .cart_card .product_infos .card_bottom .cart_modifications .product_numbers p {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+  }
+  body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons {
+    margin: 0.5rem 0 0 0;
+  }
+  body section div.underline {
+    margin-top: 4rem;
+  }
+  body section .forms #inscription p {
+    width: 70%;
+  }
+  body section .forms .shipment {
+    min-width: 625px;
+    max-width: 910px;
+  }
+  body section .forms .cart_save {
+    position: absolute;
+    right: 2rem;
   }
 }
 

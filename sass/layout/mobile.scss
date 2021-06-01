@@ -41,6 +41,12 @@
                     justify-content: space-around;
                     max-width: 100%;
                     width: 100%;
+                    & li {
+                        & #cart_alert {
+                            top:6.5rem;
+                            right: 10rem;
+                        }
+                    }
                 }
             }
             & .underline{
@@ -152,14 +158,92 @@
                 flex-wrap: wrap;
                 max-width: 98%;
                 max-height: none;
-                & .product_infos .card_bottom .cart_modifications {
-                    flex-direction: column;  
-                    min-height: 4rem;   
-                    margin-top: 1rem;  
-                    margin-bottom: 1rem;             
+                & .product_infos {
+                    & .card_bottom .cart_modifications {
+                        flex-direction: column;  
+                        min-height: 4rem;   
+                        margin-top: 1rem;  
+                        margin-bottom: 1rem;    
+                        margin-left: 1rem;
+                        & .product_numbers{
+                            margin-top: 1rem;
+                            & p{
+                                text-align: left;
+                                display: flex;
+                                flex-direction: column;
+                                width: 30%;                            
+                            }
+                        }
+                        & .cart_buttons{
+                            margin-top: 1.5rem;
+                            margin-right: 1rem;
+                        }       
+                    }
+                    & .underline{
+                        margin-top: 1rem;
+                        margin-bottom: 2rem;
+                    }
                 }
             }
-
+        }
+        & div.forms{
+            margin: 2rem 2rem 2rem 1rem;
+            & .intro{
+            }
+            & #inscription{
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                & p{
+                    width: 70%;
+                    & input{
+                    margin: 1rem 0;
+                    }
+                }
+            }
+            & .shipment{
+                min-width: 350px;
+                width: 100%;
+                max-width: 910px;
+                & p {
+                    width: 100%;
+                        & #firstname {
+                            width: 100%;
+                            max-width: 300px;
+                            margin-top: 1rem;
+                        }
+                        & #lastname {
+                            width: 100%;
+                            max-width: 300px;
+                            margin-top: 1rem;
+                        }                  
+                        & #address {
+                            width: 100%;
+                            max-width: 300px;
+                            margin-top: 1rem;
+                        }                   
+                        & #cp {
+                            width: 100%;
+                            max-width: 300px;
+                            margin-top: 1rem;
+                        }                   
+                        & #city {
+                            width: 100%;
+                            max-width: 300px;
+                            margin-top: 1rem;
+                        }                   
+                        & #email {
+                            width: 100%;
+                            max-width: 300px;
+                            margin-top: 1rem;
+                        }
+                    }
+                }
+            & input.cart_save{
+                position: inherit;
+                margin-top: 2rem;
+            }
         }
         & article{
             & #our_collection{

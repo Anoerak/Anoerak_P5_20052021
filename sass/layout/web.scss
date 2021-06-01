@@ -49,6 +49,17 @@ body{
                     color: var(--clr-primary);
                     text-decoration: none;
                 }
+                & #cart_alert{
+                    color: var(--clr-primary);
+                    margin: auto;
+                    font-size: 0.9rem;
+                    height: 1.25rem;
+                    width: 1.2rem;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 1.8rem;
+                    right: 4rem;
+                }   
             }
         }
     }

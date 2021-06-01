@@ -41,7 +41,7 @@
             <h1><a href="./index.html">Orifurniture</a></h1>
             <ul class="navbar">
                 <li class="search"><a href="#"><i class="fas fa-search"></i></a></li>
-                <li class="cart"><a href="./cart.html"><i class="fab fa-opencart"></i></a></li>
+                <li class="cart"><span id="cart_alert"></span><a href="./cart.html"><i class="fab fa-opencart"></i></a></li>
                 <li class="account"><a href="#"><i class="fas fa-user"></i></a></li>
             </ul>
         </div>
@@ -65,26 +65,11 @@
                                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum nisi dolorum sapiente quo exercitationem, inventore cupiditate reiciendis numquam cum repellendus eveniet consequuntur voluptatibus obcaecati rem tenetur quos est deleniti. Quaerat?</p>
                                         <div class="cart_modifications">
                                             <div class="product_numbers">
-                                                <label>Quantité: 
-                                                    <select name="varnish" id="varnish">
-                                                        <option value="0" selected>0</option>
-                                                        <option value="1" >1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                        <option value="6">6</option>
-                                                        <option value="7">7</option>
-                                                        <option value="8">8</option>
-                                                        <option value="9">9</option>
-                                                        <option value="10">10</option>
-                                                    </select>                                                    
-                                                </label>
-                                                <p class="price_total"><strong><span class="price_total">1198.00</span>€</strong></p>
+                                                <p class="varnish_cart">Vernis : <strong><span class="varnish_cart">Dark Oak</span></strong></p>
+                                                <p class="qty">Quantité : <strong><span class="qty">2</span></strong></p>
+                                                <p class="price_total">Tarif : <strong><span class="price_total">1198.00</span>€</strong></p>
                                             </div>
                                             <div class="cart_buttons">
-                                                <input class="cart_save" type="button" value="Save"   onclick="SaveItem()">
-                                                <input class="cart_update" type="button" value="Update" onclick="ModifyItem()">
                                                 <input class="cart_delete" type="button" value="Delete" onclick="RemoveItem()">
                                             </div>
                                         </div>
@@ -105,6 +90,34 @@
                 <div class="underline"></div>
                 <h2 class="total_price"><span class="total_p"><strong>1198.00</strong></span>€</h2>
             </div>
+            <input class="cart_update" type="button" value="Continuer" onclick="ModifyItem()">
+        </div>
+        <div class="forms">
+            <div class="underline"></div>
+            <form method="post" action="données" id="inscription">
+                <div class="intro">
+                    <h2>Vos Coordonnées</h2>
+                    <p>Attention, délais de livraison modifiés en raison des restrictions COVID19</p><br />
+                </div>
+                <div class="shipment">
+                    <p>
+                        <input type="text" name="firstname" id="firstname" placeholder="Prénom" required /><input type="text" name="lastname" id="lastname" placeholder="Nom" required />
+                    </p>
+    
+                    <p>
+                        <input type="text" name="adresse" id="address" placeholder="adresse." required />
+                    </p>
+    
+                    <p>
+                        <input type="text" name="cp" id="cp" placeholder="Code Postal." required />                <input type="text" name="city" id="city" placeholder="Ville." required />
+    
+                    </p>
+    
+                    <p>
+                        <input type="email" name="email" id="email" placeholder="Adresse e-mail (pour votre facture)" />
+                    </p>
+                </div>
+            <input class="cart_save" type="button" value="Valider"   onclick="SaveItem()">
         </div>
     </section>
 
