@@ -1,7 +1,7 @@
 body{
     & section {
         & div.underline{
-            margin-top: 1rem;
+            margin-top: 2rem;
             margin-bottom: 2rem;
         }
         & div.underline .cart_table .underline{
@@ -63,6 +63,7 @@ body{
                             height: 15px;
                         }
                         & .product_numbers{
+                            min-width: 300px;
                             align-items: flex-end;
                             display: flex;
                             flex-direction: row;
@@ -75,10 +76,10 @@ body{
                         & .cart_buttons{
                             display: flex;
                             justify-content: flex-end;
-                            min-width: 250px;
+                            min-width: 200px;
                             margin-right: 2rem;
                             & .cart_delete{
-                                
+                                margin-top: 1rem;
                                 width: 75px;
                                 height: 25px;
                                 border: none;

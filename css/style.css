@@ -986,7 +986,7 @@ body section .store_button_container .store_button i {
 }
 
 body section div.underline {
-  margin-top: 1rem;
+  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 body section div.underline .cart_table .underline {
@@ -1052,6 +1052,7 @@ body section .cart_card .product_infos .card_bottom .cart_modifications input {
   height: 15px;
 }
 body section .cart_card .product_infos .card_bottom .cart_modifications .product_numbers {
+  min-width: 300px;
   align-items: flex-end;
   display: flex;
   flex-direction: row;
@@ -1064,10 +1065,11 @@ body section .cart_card .product_infos .card_bottom .cart_modifications .product
 body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons {
   display: flex;
   justify-content: flex-end;
-  min-width: 250px;
+  min-width: 200px;
   margin-right: 2rem;
 }
 body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons .cart_delete {
+  margin-top: 1rem;
   width: 75px;
   height: 25px;
   border: none;
