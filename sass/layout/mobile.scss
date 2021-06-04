@@ -159,25 +159,31 @@
                 max-width: 98%;
                 max-height: none;
                 & .product_infos {
-                    & .card_bottom .cart_modifications {
-                        flex-direction: column;  
-                        min-height: 4rem;   
-                        margin-top: 1rem;  
-                        margin-bottom: 1rem;    
-                        margin-left: 1rem;
-                        & .product_numbers{
-                            margin-top: 1rem;
-                            & p{
-                                text-align: left;
-                                display: flex;
-                                flex-direction: column;
-                                width: 30%;                            
+                    & div.card_bottom {
+                        height: 80%;
+                        div.cart_modifications {
+                            display: flex;
+                            flex-direction: row;  
+                            flex-wrap: wrap;
+                            justify-content: flex-end;
+                            min-height: 4rem;   
+                            margin-top: 1rem;  
+                            margin-bottom: 1rem;    
+                            margin-left: 1rem;
+                            & .product_numbers{
+                                margin-top: 1rem;
+                                & p{
+                                    text-align: justify;
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 30%;                            
+                                }
                             }
+                            & .cart_buttons{
+                                margin-top: 1.5rem;
+                                margin-right: 1rem;
+                            }       
                         }
-                        & .cart_buttons{
-                            margin-top: 1.5rem;
-                            margin-right: 1rem;
-                        }       
                     }
                     & .underline{
                         margin-top: 1rem;
@@ -188,8 +194,6 @@
         }
         & div.forms{
             margin: 2rem 2rem 2rem 1rem;
-            & .intro{
-            }
             & #inscription{
                 margin: 0;
                 display: flex;

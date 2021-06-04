@@ -1,4 +1,4 @@
-@media screen and (min-width: 660px) and (max-width: 980px) {
+@media screen and (min-width: 660px) and (max-width: 800px) {
     body{
         & section {
             & div.products{
@@ -30,7 +30,11 @@
                 max-width: 100%;
             }
             & .cart_card{
-                max-height: 250px;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                height: auto;
+                max-height: none;
                 max-width: 98%;
                 & img{
                     max-width: 40%;

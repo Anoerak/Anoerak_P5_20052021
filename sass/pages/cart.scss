@@ -22,14 +22,17 @@ body{
         & .cart_card{
             display: flex;
             flex-direction: row;
-            max-height: 150px;
+            max-height: 250px;
+            margin: 1rem 0;
             & img{
                 max-width: 40%;
                 margin: 0px 10px;
                 object-fit: contain;
             }
             & .product_infos{
+                display: flex;
                 flex-direction: column;
+                justify-content: space-between;
                 margin: 0rem 1rem;
                 & .product_title{
                     display: flex;
@@ -55,8 +58,11 @@ body{
                     & p{
                         font-size: 0.9rem;
                     }
-                    & .cart_modifications{
+                    & div.cart_modifications{
                         display: flex;
+                        flex-direction: row;  
+                        flex-wrap: wrap;
+                        align-items: flex-end;
                         justify-content: space-between;
                         & input{
                             width: 25px;
@@ -77,7 +83,7 @@ body{
                             display: flex;
                             justify-content: flex-end;
                             min-width: 200px;
-                            margin-right: 2rem;
+                            margin-right: 1rem;
                             & .cart_delete{
                                 margin-top: 1rem;
                                 width: 75px;

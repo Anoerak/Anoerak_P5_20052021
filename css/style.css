@@ -729,23 +729,29 @@ body section .carousel_nav > label {
     max-width: 98%;
     max-height: none;
   }
-  body section div.cart_card .product_infos .card_bottom .cart_modifications {
-    flex-direction: column;
+  body section div.cart_card .product_infos div.card_bottom {
+    height: 80%;
+  }
+  body section div.cart_card .product_infos div.card_bottom div.cart_modifications {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     min-height: 4rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
     margin-left: 1rem;
   }
-  body section div.cart_card .product_infos .card_bottom .cart_modifications .product_numbers {
+  body section div.cart_card .product_infos div.card_bottom div.cart_modifications .product_numbers {
     margin-top: 1rem;
   }
-  body section div.cart_card .product_infos .card_bottom .cart_modifications .product_numbers p {
-    text-align: left;
+  body section div.cart_card .product_infos div.card_bottom div.cart_modifications .product_numbers p {
+    text-align: justify;
     display: flex;
     flex-direction: column;
     width: 30%;
   }
-  body section div.cart_card .product_infos .card_bottom .cart_modifications .cart_buttons {
+  body section div.cart_card .product_infos div.card_bottom div.cart_modifications .cart_buttons {
     margin-top: 1.5rem;
     margin-right: 1rem;
   }
@@ -1007,7 +1013,8 @@ body section fieldset {
 body section .cart_card {
   display: flex;
   flex-direction: row;
-  max-height: 150px;
+  max-height: 250px;
+  margin: 1rem 0;
 }
 body section .cart_card img {
   max-width: 40%;
@@ -1015,7 +1022,9 @@ body section .cart_card img {
   object-fit: contain;
 }
 body section .cart_card .product_infos {
+  display: flex;
   flex-direction: column;
+  justify-content: space-between;
   margin: 0rem 1rem;
 }
 body section .cart_card .product_infos .product_title {
@@ -1043,32 +1052,35 @@ body section .cart_card .product_infos .card_bottom {
 body section .cart_card .product_infos .card_bottom p {
   font-size: 0.9rem;
 }
-body section .cart_card .product_infos .card_bottom .cart_modifications {
+body section .cart_card .product_infos .card_bottom div.cart_modifications {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
   justify-content: space-between;
 }
-body section .cart_card .product_infos .card_bottom .cart_modifications input {
+body section .cart_card .product_infos .card_bottom div.cart_modifications input {
   width: 25px;
   height: 15px;
 }
-body section .cart_card .product_infos .card_bottom .cart_modifications .product_numbers {
+body section .cart_card .product_infos .card_bottom div.cart_modifications .product_numbers {
   min-width: 300px;
   align-items: flex-end;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-body section .cart_card .product_infos .card_bottom .cart_modifications .product_numbers p {
+body section .cart_card .product_infos .card_bottom div.cart_modifications .product_numbers p {
   margin-right: 1.5rem;
   font-size: 1rem;
 }
-body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons {
+body section .cart_card .product_infos .card_bottom div.cart_modifications .cart_buttons {
   display: flex;
   justify-content: flex-end;
   min-width: 200px;
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
-body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons .cart_delete {
+body section .cart_card .product_infos .card_bottom div.cart_modifications .cart_buttons .cart_delete {
   margin-top: 1rem;
   width: 75px;
   height: 25px;
@@ -1078,11 +1090,11 @@ body section .cart_card .product_infos .card_bottom .cart_modifications .cart_bu
   color: #fff;
   transition: 200ms ease-in-out;
 }
-body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons .cart_delete:hover {
+body section .cart_card .product_infos .card_bottom div.cart_modifications .cart_buttons .cart_delete:hover {
   background-color: #921616;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15), 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
-body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons .cart_delete:active {
+body section .cart_card .product_infos .card_bottom div.cart_modifications .cart_buttons .cart_delete:active {
   box-shadow: 0px 0px 0px;
 }
 body section .subtotal {
@@ -1258,31 +1270,108 @@ body section .forms .cart_save:active {
     max-width: 100%;
   }
   body section .cart_card {
-    max-height: 230px;
+    max-height: 250px;
     max-width: 98%;
   }
   body section .cart_card img {
     max-width: 40%;
   }
-  body section .cart_card .product_infos .card_bottom .cart_modifications {
-    flex-direction: column;
-    min-height: 4rem;
-    margin-top: 1rem;
+  body section .cart_card .product_infos .card_bottom div.cart_modifications {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    min-height: 3rem;
+    margin-top: 0px;
     margin-bottom: 1rem;
-    margin-top: 1rem;
   }
-  body section .cart_card .product_infos .card_bottom .cart_modifications .product_numbers {
+  body section .cart_card .product_infos .card_bottom div.cart_modifications .product_numbers {
     margin-top: 1rem;
     justify-items: flex-start;
   }
-  body section .cart_card .product_infos .card_bottom .cart_modifications .product_numbers p {
+  body section .cart_card .product_infos .card_bottom div.cart_modifications .product_numbers p {
     text-align: left;
     display: flex;
     flex-direction: column;
     width: 25%;
   }
-  body section .cart_card .product_infos .card_bottom .cart_modifications .cart_buttons {
+  body section .cart_card .product_infos .card_bottom div.cart_modifications div.cart_buttons {
     margin: 0.5rem 0 0 0;
+    min-width: 75px;
+  }
+  body section div.underline {
+    margin-top: 4rem;
+  }
+  body section .forms #inscription p {
+    width: 70%;
+  }
+  body section .forms .shipment {
+    min-width: 625px;
+    max-width: 910px;
+  }
+  body section .forms .cart_save {
+    position: absolute;
+    right: 2rem;
+  }
+}
+@media screen and (min-width: 660px) and (max-width: 800px) {
+  body section div.products .options fieldset .option {
+    margin-top: auto;
+    flex-direction: row;
+  }
+  body section div.products .options fieldset .option .varnish {
+    min-width: 100px;
+  }
+  body section div.products .options fieldset .option .varnish p {
+    margin-right: 10px;
+  }
+  body section div.products .options fieldset .option .qty {
+    min-width: 100px;
+  }
+  body section div.products .options fieldset .option .validate {
+    min-width: 100px;
+  }
+  body section div.products .options fieldset .option .tarif {
+    min-width: 100px;
+  }
+  body section fieldset {
+    max-width: 100%;
+  }
+  body section .cart_card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: auto;
+    max-height: none;
+    max-width: 98%;
+  }
+  body section .cart_card img {
+    max-width: 40%;
+  }
+  body section .cart_card .product_infos .card_bottom div.cart_modifications {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    min-height: 3rem;
+    margin-top: 0px;
+    margin-bottom: 1rem;
+  }
+  body section .cart_card .product_infos .card_bottom div.cart_modifications .product_numbers {
+    margin-top: 1rem;
+    justify-items: flex-start;
+  }
+  body section .cart_card .product_infos .card_bottom div.cart_modifications .product_numbers p {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+  }
+  body section .cart_card .product_infos .card_bottom div.cart_modifications div.cart_buttons {
+    margin: 0.5rem 0 0 0;
+    min-width: 75px;
   }
   body section div.underline {
     margin-top: 4rem;

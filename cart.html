@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
     <link href="https://fonts.googleapis.com/css2?family=Mina:wght@400;700&family=Roboto:wght@100;300;400;500;900&family=Srisakdi:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./images/orinoco_favicon.webp">
 
     <script src="https://kit.fontawesome.com/05ea8ba719.js" crossorigin="anonymous"></script>
 
@@ -24,13 +25,13 @@
                     <div>
                         <div>
                             <ul>
-                                <li><a href="#home">Accueil</a></li>
-                                <li><a href="#our_collection">Notre Collection</a></li>
-                                <li><a href="#new_arrival">Nos Dernières Créations</a></li>
-                                <li><a href="#our_history">Notre Histoire</a></li>
+                                <li><a href="./index.html">Accueil</a></li>
+                                <li><a href="./index.html#our_collection">Notre Collection</a></li>
+                                <li><a href="./index.html">Nos Dernières Créations</a></li>
+                                <li><a href="./index.html#our_history">Notre Histoire</a></li>
                                 <li><a href="#user_account">Votre Compte</a></li>
                                 <li><a href="./cart.html">Votre Panier</a></li>
-                                <li><a href="#contact_us">Suivez-nous</a></li>
+                                <li><a href="./index.html#contact_us">Suivez-nous</a></li>
                             </ul>
                         </div>
                     </div>
@@ -53,8 +54,8 @@
         <div class="underline"></div>
         <div id="cart_table">
             <form name="ShoppingList">
-                <fieldset>
-                    <div class="cart_card">
+                <fieldset id="cart_list">
+                    <!-- <div id="my_selection" class="cart_card">
                         <img src="./images/oak_1.webp" alt="table_design_bois">
                             <div class="product_infos">
                                 <div class="product_title">
@@ -65,17 +66,17 @@
                                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum nisi dolorum sapiente quo exercitationem, inventore cupiditate reiciendis numquam cum repellendus eveniet consequuntur voluptatibus obcaecati rem tenetur quos est deleniti. Quaerat?</p>
                                         <div class="cart_modifications">
                                             <div class="product_numbers">
-                                                <p class="varnish_cart">Vernis : <strong><span class="varnish_cart">Dark Oak</span></strong></p>
-                                                <p class="qty">Quantité : <strong><span class="qty">2</span></strong></p>
-                                                <p class="price_total">Tarif : <strong><span class="price_total">1198.00</span>€</strong></p>
+                                                <p class="varnish_cart">Vernis :<br> <strong><span class="varnish_cart">Dark Oak</span></strong></p>
+                                                <p class="qty">Quantité : <br><strong><span class="qty">2</span></strong></p>
+                                                <p class="price_total">Tarif : <br><strong><span class="price_total">1198.00</span>€</strong></p>
                                             </div>
                                             <div class="cart_buttons">
-                                                <input class="cart_delete" type="button" value="Delete" onclick="RemoveItem()">
+                                                <input class="cart_delete" type="button" value="Delete">
                                             </div>
                                         </div>
-                                    </div>
                                 </div>
-                    </div>
+                            </div>
+                    </div> -->
                 </fieldset>
                 <div class="underline"></div>
             </form>
@@ -158,5 +159,6 @@
             </div>
         </div>
     </footer>
+    <script src="./JS/script.js"></script>
 </body>
 </html>
