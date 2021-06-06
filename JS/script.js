@@ -118,12 +118,14 @@
                     let selection ={
                         Id: ID,
                         Name: nameDiv.textContent,
+                        Description: descriptionDiv.textContent,
+                        Photo: photoDiv.src,
                         Varnish: selectedVarnish[0].innerHTML,
                         Qty: qtyDiv.value,
-                        Price: priceDiv.textContent,
+                        Price: (((furniture.price*(qtyDiv.value))/100).toFixed(2)),
                         
                     }
-                    localArray.push(selection.Id, selection.Name, selection.Varnish, selection.Qty, selection.Price);
+                    localArray.push(selection.Id, selection.Name, selection.Description, selection.Photo, selection.Varnish, selection.Qty, selection.Price);
                     console.table(selection)
                     localStorage.setItem(ID+"_"+localSelector, JSON.stringify(localArray))
                 })
@@ -144,11 +146,16 @@
         let myCart = [];
         Object.keys(localStorage).forEach(function(key){
             console.log(localStorage.getItem(key));
+            let test = JSON.parse(localStorage.getItem(key));
+            console.log(test);
+            console.log(test[4]);
             myCart.push(key);
             console.table(myCart)
+            console.log
             let card = document.createElement('div');
+                card.id = key;
                 card.className = "cart_card";
-                card.innerHTML += '<img src="./images/oak_1.webp" alt="table_design_bois"><div class="product_infos"><div class="product_title"><h3 class="ttl">Cross Table</h3><p class="price_unit"><span class="price_unit">      599.00</span>€</p></div><div class="underline"></div><div class="card_bottom"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum nisi dolorum sapiente quo exercitationem, inventore cupiditate reiciendis numquam cum repellendus eveniet consequuntur voluptatibus obcaecati rem tenetur quos est deleniti. Quaerat?</p><div class="cart_modifications"><div class="product_numbers"><p class="varnish_cart">Vernis :<br> <strong><span class="varnish_cart_choosed">Dark Oak</span></strong></p><p class="qty">Quantité : <br><strong><span class="qty">2</span></strong></p><p class="price_total">Tarif : <br><strong><span class="price_total">1198.00</span>€</strong></p></div><div class="cart_buttons"><input class="cart_delete" type="button" value="Delete"></div></div><div class="underline"></div></div></div>'
+                card.innerHTML += '<img src="'+test[3]+'" alt="table_design_bois"><div class="product_infos"><div class="product_title"><h3 class="ttl">' + test[1] + '</h3><p class="price_unit"><span class="price_unit">'+test[6]/test[5] +'</span>€</p></div><div class="underline"></div><div class="card_bottom"><p>'+test[2]+'</p><div class="cart_modifications"><div class="product_numbers"><p class="varnish_cart">Vernis :<br> <strong><span class="varnish_cart_choosed">'+test[4]+'</span></strong></p><p class="qty">Quantité : <br><strong><span class="qty">'+test[5]+'</span></strong></p><p class="price_total">Tarif : <br><strong><span class="price_total">'+test[6]+'</span>€</strong></p></div><div class="cart_buttons"><input class="cart_delete" type="button" value="Delete"></div></div><div class="underline"></div></div></div>'
 
                 document.getElementById('cart_list').appendChild(card);
             
