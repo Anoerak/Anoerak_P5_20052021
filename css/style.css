@@ -999,6 +999,29 @@ body section div.underline .cart_table .underline {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+body section .empty_button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 2rem;
+}
+body section .empty_button .cart_empty {
+  margin-top: 1rem;
+  width: 85px;
+  height: 28px;
+  border: none;
+  background-color: #ce1c1c;
+  font-family: "Mina";
+  color: #fff;
+  transition: 200ms ease-in-out;
+}
+body section .empty_button .cart_empty:hover {
+  background-color: #e43939;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15), 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+body section .empty_button .cart_empty:active {
+  box-shadow: 0px 0px 0px;
+}
 body section .h2cart {
   font-family: "Srisakdi";
   font-size: 3.5rem;
@@ -1119,8 +1142,8 @@ body section .subtotal .underline {
   margin: 1rem;
 }
 body section .subtotal .cart_update {
-  width: 75px;
-  height: 25px;
+  width: 95px;
+  height: 32px;
   border: none;
   background-color: var(--clr-btn-update);
   font-family: "Mina";

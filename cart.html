@@ -78,18 +78,21 @@
                             </div>
                     </div> -->
                 </fieldset>
+                <div class="empty_button">
+                    <input id="empty_button" class="cart_empty" type="button" value="Vider Panier"">
+                </div>
                 <div class="underline"></div>
             </form>
         </div>
         <div class="subtotal">
             <div class="subtotal_area">
-                <h4 class="price_subtt">Sous-total de votre panier :     <span class="price_sub"><strong>1198.00</strong></span>€</h4>
-                <h4 class="price_shipment">Frais d'expédition (offert) :    <span class="ship_sub"><strong>100.00</strong></span>€</h4>
-                <h4 class="price_tax">Dont TVA :    <span class="tva"><strong>199.66</strong></span>€</h4>
+                <h4 class="price_subtt">Sous-total de votre panier : <span class="price_sub"><strong id="price_subtt"></strong></span>€</h4>
+                <h4 class="price_shipment">Frais d'expédition (offert) :    <span class="ship_sub"><strong id="ship_sub">100.00</strong></span>€</h4>
+                <h4 class="price_tax">Dont TVA :    <span class="tva"><strong id="tva"></strong></span>€</h4>
             </div>
             <div class="total_area">
                 <div class="underline"></div>
-                <h2 class="total_price"><span class="total_p"><strong>1198.00</strong></span>€</h2>
+                <h2 class="total_price"><span class="total_p"><strong id="total_price"></strong></span>€</h2>
             </div>
             <input type="checkbox" id="checkbox">
             <input class="cart_update" type="button" value="Continuer" onclick="ModifyItem()">
