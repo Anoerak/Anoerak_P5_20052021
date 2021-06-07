@@ -100,19 +100,8 @@
     if(window.location.pathname === '/cart.html') {
         let myCart = [];
         document.addEventListener('DOMContentLoaded',onLoadCartInitialization);
+
         //Charge le panier dans le stockage local et implémente le DOM pour chaque ligne produit.
-        Object.keys(localStorage).forEach(function(key){
-            let cartArray = JSON.parse(localStorage.getItem(key));
-            myCart.push(cartArray);
-            let card = document.createElement('div');
-                card.id = key;
-                card.className = "cart_card";
-                card.innerHTML += '<img src="'+cartArray[3]+'" alt="table_design_bois"><div class="product_infos"><div class="product_title"><h3 class="ttl">' + cartArray[1] + '</h3><p class="price_unit"><span class="price_unit">'+(cartArray[6]/cartArray[5]).toFixed(2) +'</span>€</p></div><div class="underline"></div><div class="card_bottom"><p>'+cartArray[2]+'</p><div class="cart_modifications"><div class="product_numbers"><p class="varnish_cart">Vernis :<br> <strong><span class="varnish_cart_choosed">'+cartArray[4]+'</span></strong></p><p class="qty">Quantité : <br><strong><span class="qty">'+cartArray[5]+'</span></strong></p><p class="price_total">Tarif : <br><strong><span class="price_total">'+cartArray[6]+'</span>€</strong></p></div><div class="cart_buttons"><input id="'+key+'"class="cart_delete" type="button" value="Retirer"></div></div><div class="underline"></div></div></div>'
-
-                document.getElementById('cart_list').appendChild(card); 
-        });
-
-        //
         let sumMyCart = (myCart) => {
             let newArray = [];
             myCart.forEach(sub => {
@@ -126,6 +115,16 @@
             });
             return (newArray);
         };
+        Object.keys(localStorage).forEach(function(key){
+            let cartArray = JSON.parse(localStorage.getItem(key));
+            myCart.push(cartArray);
+            let card = document.createElement('div');
+                card.id = key;
+                card.className = "cart_card";
+                card.innerHTML += '<img src="'+cartArray[3]+'" alt="table_design_bois"><div class="product_infos"><div class="product_title"><h3 class="ttl">' + cartArray[1] + '</h3><p class="price_unit"><span class="price_unit">'+(cartArray[6]/cartArray[5]).toFixed(2) +'</span>€</p></div><div class="underline"></div><div class="card_bottom"><p>'+cartArray[2]+'</p><div class="cart_modifications"><div class="product_numbers"><p class="varnish_cart">Vernis :<br> <strong><span class="varnish_cart_choosed">'+cartArray[4]+'</span></strong></p><p class="qty">Quantité : <br><strong><span class="qty">'+cartArray[5]+'</span></strong></p><p class="price_total">Tarif : <br><strong><span class="price_total">'+cartArray[6]+'</span>€</strong></p></div><div class="cart_buttons"><input id="'+key+'"class="cart_delete" type="button" value="Retirer"></div></div><div class="underline"></div></div></div>'
+                document.getElementById('cart_list').appendChild(card); 
+        });
+
         //Activation du bouton d'affichage du formulaire et du formulaire
         if(Object.keys(localStorage) === null){
            document.getElementById('cart_update').setAttribute('disabled', '');
@@ -139,12 +138,24 @@
             document.getElementById('cart_update').addEventListener('click', function() {
                 let form = document.createElement('div')
                 form.className = 'forms';
-                form.innerHTML = '<div class="underline"></div><form method="post" action="./confirmation.html" id="inscription"><div class="intro"><h2>Vos Coordonnées</h2><p>Attention, délais de livraison modifiés en raison des restrictions COVID19</p><br /></div><div class="shipment"><p><input type="text" name="firstname" id="firstname" placeholder="Prénom" pattern="[a-zA-Z].{4,}" title="Please insert at least 5 characters" required /><input type="text" name="lastname" id="lastname" placeholder="Nom" pattern="[a-zA-Z].{3,}" title="Please insert at least 3 characters" required /></p><p><input type="text" name="adresse" id="address" placeholder="adresse" required /></p><p><input type="text" name="cp" id="cp" placeholder="Code Postal." pattern="\{5,}" title="Please insert at least 5 numbers" minlength="5" required /><input type="text" name="city" id="city" placeholder="Ville." pattern="[a-zA-Z].{3,}" title="Please insert at least 3 characters" required /></p><p><input type="email" name="email" id="email" placeholder="Adresse e-mail (pour votre facture)" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/></p></div><input id="validate_order" class="cart_save" form="inscription" type="submit" value="Valider"">';
+                form.innerHTML = '<div class="underline"></div><form method="post" action="./confirmation.html" id="inscription"><div class="intro"><h2>Vos Coordonnées</h2><p>Attention, délais de livraison modifiés en raison des restrictions COVID19</p><br /></div><div class="shipment"><p><input type="text" name="firstname" id="firstname" placeholder="Prénom" pattern="[a-zA-Z].{4,}" title="Please insert at least 5 characters" required /><input type="text" name="lastname" id="lastname" placeholder="Nom" pattern="[a-zA-Z].{3,}" title="Please insert at least 3 characters" required /></p><p><input type="text" name="adresse" id="address" placeholder="adresse" required /></p><p><input type="text" name="cp" id="cp" placeholder="Code Postal." pattern="\{5,}" title="Please insert at least 5 numbers" minlength="5" required /><input type="text" name="city" id="city" placeholder="Ville." pattern="[a-zA-Z].{3,}" title="Please insert at least 3 characters" required /></p><p><input type="email" name="email" id="email" placeholder="Adresse e-mail (pour votre facture)" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/></p></div><input id="validate_order" class="cart_save" form="inscription" type="submit" value="Valider">';
 
             document.getElementById('total_area').parentNode.appendChild(form);
 
             validateBtn = document.getElementById('validate_order');
+            let forms = document.getElementById('inscription');
+            let check = document.getElementById('email');
 
+            if(forms.reportValidity() != true){
+                validateBtn.setAttribute('disabled', '')
+            }else{
+            }
+            forms.addEventListener('input', function(){
+                if(forms.reportValidity() == true){
+                    validateBtn.disabled = false;
+                }else{
+                }
+            })
             //Evènement sur bouton VALIDER pour récupération des éléments du formualaire et POST vers API
             validateBtn.addEventListener('click', function() {
                 let contact = {
@@ -204,7 +215,7 @@
 
 
 
-    // Charge le script uniquement sur la page Panier et lance la fonction de récupération de données en stockage locale.
+    // Charge le script uniquement sur la page Confirmaiton, personnalise le message et vide le stockage local et renvoie vers l'acceuil.
     if(window.location.pathname === '/confirmation.html') {
         let contact = JSON.parse(localStorage.getItem('contact'));
         document.getElementById('customer').innerHTML = contact.firstName;
