@@ -1123,7 +1123,7 @@ body section .cart_card .product_infos .card_bottom div.cart_modifications .cart
 body section .subtotal {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   margin: 2rem;
 }
 body section .subtotal .subtotal_area {
@@ -1144,6 +1144,7 @@ body section .subtotal .underline {
 body section .subtotal .cart_update {
   width: 95px;
   height: 32px;
+  margin-top: 1rem;
   border: none;
   background-color: var(--clr-btn-update);
   font-family: "Mina";
@@ -1168,6 +1169,12 @@ body section .forms {
 body section .forms .underline {
   margin: 1rem;
 }
+body section .forms #inscription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 body section .forms #inscription p {
   width: 70%;
 }
@@ -1176,6 +1183,9 @@ body section .forms .intro {
   flex-direction: column;
   align-items: center;
   margin: 0 0.5rem;
+}
+body section .forms .intro p {
+  text-align: center;
 }
 body section .forms .shipment {
   max-width: 910px;
@@ -1189,6 +1199,7 @@ body section .forms .shipment {
 }
 body section .forms .shipment p {
   width: 50%;
+  text-align: center;
 }
 body section .forms .shipment #firstname {
   vertical-align: middle;
@@ -1251,8 +1262,7 @@ body section .forms .shipment #email {
   padding-left: 0.2rem;
 }
 body section .forms .cart_save {
-  position: absolute;
-  right: 2rem;
+  margin-top: 2rem;
   width: 95px;
   height: 32px;
   border: none;
@@ -1334,8 +1344,7 @@ body section .forms .cart_save:active {
     max-width: 910px;
   }
   body section .forms .cart_save {
-    position: absolute;
-    right: 2rem;
+    margin-top: 2rem;
   }
 }
 @media screen and (min-width: 660px) and (max-width: 800px) {
@@ -1407,8 +1416,7 @@ body section .forms .cart_save:active {
     max-width: 910px;
   }
   body section .forms .cart_save {
-    position: absolute;
-    right: 2rem;
+    margin-top: 2rem;
   }
 }
 

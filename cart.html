@@ -87,17 +87,16 @@
         <div class="subtotal">
             <div class="subtotal_area">
                 <h4 class="price_subtt">Sous-total de votre panier : <span class="price_sub"><strong id="price_subtt"></strong></span>€</h4>
-                <h4 class="price_shipment">Frais d'expédition (offert) :    <span class="ship_sub"><strong id="ship_sub">100.00</strong></span>€</h4>
+                <h4 class="price_shipment">Frais d'expédition (offerts) :    <span class="ship_sub"><strong id="ship_sub">100.00</strong></span>€</h4>
                 <h4 class="price_tax">Dont TVA :    <span class="tva"><strong id="tva"></strong></span>€</h4>
             </div>
-            <div class="total_area">
+            <div id="total_area" class="total_area">
                 <div class="underline"></div>
                 <h2 class="total_price"><span class="total_p"><strong id="total_price"></strong></span>€</h2>
             </div>
-            <input type="checkbox" id="checkbox">
-            <input class="cart_update" type="button" value="Continuer" onclick="ModifyItem()">
+            <input id="cart_update" class="cart_update" type="button" value="Continuer"">
         </div>
-        <div class="forms">
+        <!-- <div class="forms">
             <div class="underline"></div>
             <form method="post" action="données" id="inscription">
                 <div class="intro">
@@ -122,8 +121,8 @@
                         <input type="email" name="email" id="email" placeholder="Adresse e-mail (pour votre facture)" />
                     </p>
                 </div>
-            <input class="cart_save" type="button" value="Valider"   onclick="SaveItem()">
-        </div>
+            <input id="validate_order" class="cart_save" type="button" value="Valider"">
+        </div> -->
     </section>
 
     <footer id="contact_us">
