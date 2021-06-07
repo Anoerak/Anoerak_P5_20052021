@@ -14,6 +14,7 @@
 
 
     let ID = window.location.hash.substr(10);
+    console.log(ID)
     let logTest = "";
     let furniture = "";
     var vernis = "";
