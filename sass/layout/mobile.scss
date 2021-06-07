@@ -43,8 +43,8 @@
                     width: 100%;
                     & li {
                         & #cart_alert {
-                            top:6.5rem;
-                            right: 10rem;
+                            top: 9%;
+                            right: 46%;
                         }
                     }
                 }
@@ -54,6 +54,22 @@
             }
         }
         & section {
+            & h2{
+                font-size: 2.5rem;
+            }
+            & .h2top{
+                padding-left: 2%;
+                padding-right: 0;
+            }
+            & .h2bottom{
+                padding-right: 2%;
+                padding-left: 0;
+            }
+            & p{
+                margin: 1rem;
+                padding: 0;
+                width: auto;
+            }
             & h2.h2cart{
                 font-size: 2.5rem;
                 text-decoration: underline;
@@ -110,22 +126,6 @@
             }
             & .hero{
                 max-width: 600px;
-                & h2{
-                    font-size: 2.5rem;
-                }
-                & .h2top{
-                    padding-left: 2%;
-                    padding-right: 0;
-                }
-                & .h2bottom{
-                    padding-right: 2%;
-                    padding-left: 0;
-                }
-                & p{
-                    margin: 1rem;
-                    padding: 0;
-                    width: auto;
-                }
                 & .container{
                     min-height: 250px;
                     max-height: 350px;

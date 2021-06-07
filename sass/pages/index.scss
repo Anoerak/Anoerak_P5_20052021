@@ -1,5 +1,5 @@
 body{
-    & .hero{
+    & section{
         max-width: 1440px;
         margin: auto;
         & h2{
@@ -26,30 +26,33 @@ body{
             margin-left: auto;
             margin-right: auto;
         }
-        & .store_button_container{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            margin-bottom: 5rem;
-            & .store_button{
+        & .hero{
+            width: -webkit-fill-available;
+            & .store_button_container{
+                width: 100%;
                 display: flex;
-                align-items: center;
-                justify-content: space-evenly;
-                width: 180px;
-                height: 75px;
-                font-size: 1.2rem;
-                text-decoration: none;
-                background-color: var(--clr-primary);
-                color: #fff;
-                padding: 0 1rem;
-                box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.30), 3px 3px 6px rgba(0, 0, 0, 0.15);
-                transition: 300ms ease-in-out;
-                &:hover{
-                    background-color: lighten($color: #3A1E09, $amount: 10%);
-                    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.30), 3px 3px 12px rgba(0, 0, 0, 0.15);
-                }
-                &:active{
-                    box-shadow: 0px 0px 0px;
+                justify-content: center;
+                margin-bottom: 5rem;
+                & .store_button{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    width: 180px;
+                    height: 75px;
+                    font-size: 1.2rem;
+                    text-decoration: none;
+                    background-color: var(--clr-primary);
+                    color: #fff;
+                    padding: 0 1rem;
+                    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.30), 3px 3px 6px rgba(0, 0, 0, 0.15);
+                    transition: 300ms ease-in-out;
+                    &:hover{
+                        background-color: lighten($color: #3A1E09, $amount: 10%);
+                        box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.30), 3px 3px 12px rgba(0, 0, 0, 0.15);
+                    }
+                    &:active{
+                        box-shadow: 0px 0px 0px;
+                    }
                 }
             }
         }

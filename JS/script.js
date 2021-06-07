@@ -28,16 +28,13 @@
 
 
     // Charge le script uniquement sur la page Article et lance la fonction de récupération de données API.
-    console.log(window.location.pathname)
-    if(window.location.pathname === '/product.html')
-        {document.addEventListener('DOMContentLoaded',article),
-        document.addEventListener('DOMContentLoaded',onLoadCartInitialization),
+    if(window.location.pathname === '/product.html'){
+            document.addEventListener('DOMContentLoaded',article),
+            document.addEventListener('DOMContentLoaded',onLoadCartInitialization),
             //Fonction d'ajustement du prix d'affichage sur la base de la quantité sélectionnée.
             qtyDiv.addEventListener('input', function(){
             priceDiv.innerHTML = (((furniture.price*(qtyDiv.value))/100).toFixed(2))+"€";
         });
-
-    console.log(ID);
 
         // Va récupérer les données de l'API, les convertir et les placer ds le DOM.
         function article(){
@@ -51,7 +48,6 @@
                 .then (furniture => vernis = furniture.varnish)
                 //Récupère les données API et implémente le DOM de la fiche produit.
                 .then(function() {
-                    console.log(furniture)
                     nameDiv.innerHTML = furniture.name;
                     descriptionDiv.innerHTML = furniture.description;
                     priceDiv.innerHTML = (((furniture.price*(qtyDiv.value))/100).toFixed(2))+"€";
@@ -85,12 +81,10 @@
                 }
                 //Ajoute une ligne spécifique au produit/vernis ou écrase la quantité si déjà existant.
                 localArray.push(selection.Id, selection.Name, selection.Description, selection.Photo, selection.Varnish, selection.Qty, selection.Price);
-                console.log(selection)
-                console.log(typeof(selection.Price))
                 localStorage.setItem(ID+"_"+localSelector, JSON.stringify(localArray))
                 //Message de confirmation de l'ajout au panier.
                 onLoadCartInitialization();
-                alert(selection.Qty + ' ' + selection.Name + ' ajouté à votre panier')
+                alert(selection.Qty + ' ' + selection.Name + ' ' + selection.Varnish + ' ajouté à votre panier')
             })
     } else {};
 
@@ -138,7 +132,7 @@
             document.getElementById('cart_update').addEventListener('click', function() {
                 let form = document.createElement('div')
                 form.className = 'forms';
-                form.innerHTML = '<div class="underline"></div><form method="post" action="./confirmation.html" id="inscription"><div class="intro"><h2>Vos Coordonnées</h2><p>Attention, délais de livraison modifiés en raison des restrictions COVID19</p><br /></div><div class="shipment"><p><input type="text" name="firstname" id="firstname" placeholder="Prénom" pattern="[a-zA-Z].{4,}" title="Please insert at least 5 characters" required /><input type="text" name="lastname" id="lastname" placeholder="Nom" pattern="[a-zA-Z].{3,}" title="Please insert at least 3 characters" required /></p><p><input type="text" name="adresse" id="address" placeholder="adresse" required /></p><p><input type="text" name="cp" id="cp" placeholder="Code Postal." pattern="\{5,}" title="Please insert at least 5 numbers" minlength="5" required /><input type="text" name="city" id="city" placeholder="Ville." pattern="[a-zA-Z].{3,}" title="Please insert at least 3 characters" required /></p><p><input type="email" name="email" id="email" placeholder="Adresse e-mail (pour votre facture)" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/></p></div><input id="validate_order" class="cart_save" form="inscription" type="submit" value="Valider">';
+                form.innerHTML = '<div class="underline"></div><form method="post" action="./confirmation.html" id="inscription"><div class="intro"><h2>Vos Coordonnées</h2><p>Attention, délais de livraison modifiés en raison des restrictions COVID19</p><br /></div><div class="shipment"><p><input type="text" name="firstname" id="firstname" placeholder="Prénom" pattern="[a-zA-Z].{3,}" title="Please insert at least 4 characters" required /><input type="text" name="lastname" id="lastname" placeholder="Nom" pattern="[a-zA-Z].{2,}" title="Please insert at least 3 characters" required /></p><p><input type="text" name="adresse" id="address" placeholder="adresse" required /></p><p><input type="text" name="cp" id="cp" placeholder="Code Postal." pattern="[0-9].{4,}" title="Please insert at least 5 numbers" minlength="4" required /><input type="text" name="city" id="city" placeholder="Ville." pattern="[a-zA-Z].{3,}" title="Please insert at least 3 characters" required /></p><p><input type="email" name="email" id="email" placeholder="Adresse e-mail (pour votre facture)" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/></p></div><input id="validate_order" class="cart_save" form="inscription" type="submit" value="Valider">';
 
             document.getElementById('total_area').parentNode.appendChild(form);
 
@@ -174,11 +168,9 @@
                     return column;
                 }
                 let products = getCol(myCart, 0);
-                console.table(products)
 
                 //Mise en forme et envois des éléments vers l'API
                 let data = JSON.stringify({contact, products});
-                console.log(data)
     
                 fetch('http://localhost:3000/api/furniture/order', {
                     method: 'POST',
@@ -256,7 +248,6 @@
             });
             return (newArray);
         }
-        console.table(myCart);
         let cart = sumMyCart(myCart);
             cartAlertDiv.textContent = cart[5];
         }

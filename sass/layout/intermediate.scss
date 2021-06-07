@@ -39,29 +39,32 @@
                 & img{
                     max-width: 40%;
                 }
-                & .product_infos .card_bottom div.cart_modifications {
-                    display: flex;
-                    flex-direction: row;  
-                    flex-wrap: wrap;
-                    align-items: flex-end;
-                    justify-content: space-between;
-                    min-height: 3rem;   
-                    margin-top: 0px;  
-                    margin-bottom: 1rem;
-                    & .product_numbers{
-                        margin-top: 1rem;
-                        justify-items: flex-start;
-                        & p{
-                            text-align: left;
-                            display: flex;
-                            flex-direction: column;
-                            width: 25%;                            
+                & .product_infos {
+                    min-height: 300px;
+                    & .card_bottom div.cart_modifications {
+                        display: flex;
+                        flex-direction: row;  
+                        flex-wrap: wrap;
+                        align-items: flex-end;
+                        justify-content: space-between;
+                        min-height: 3rem;   
+                        margin-top: 0px;  
+                        margin-bottom: 1rem;
+                        & .product_numbers{
+                            margin-top: 1rem;
+                            justify-items: flex-start;
+                            & p{
+                                text-align: left;
+                                display: flex;
+                                flex-direction: column;
+                                width: 25%;                            
+                            }
                         }
+                        & div.cart_buttons{
+                            margin: 0.5rem 0 0 0;
+                            min-width: 75px;
+                        }          
                     }
-                    & div.cart_buttons{
-                        margin: 0.5rem 0 0 0;
-                        min-width: 75px;
-                    }          
                 }
             }
             & div.underline{

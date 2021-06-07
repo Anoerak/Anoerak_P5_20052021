@@ -235,41 +235,44 @@ body .underline {
   margin-bottom: 5rem;
 }
 
-body .hero {
+body section {
   max-width: 1440px;
   margin: auto;
 }
-body .hero h2 {
+body section h2 {
   font-family: "Srisakdi";
   font-size: 3.5rem;
   font-weight: 500;
   width: auto;
 }
-body .hero .h2top {
+body section .h2top {
   white-space: nowrap;
   text-align: left;
   padding-left: 20%;
   padding-right: 20%;
 }
-body .hero .h2bottom {
+body section .h2bottom {
   white-space: nowrap;
   text-align: right;
   padding-right: 20%;
   padding-left: 20%;
 }
-body .hero p {
+body section p {
   margin-top: 2rem;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
-body .hero .store_button_container {
+body section .hero {
+  width: -webkit-fill-available;
+}
+body section .hero .store_button_container {
   width: 100%;
   display: flex;
   justify-content: center;
   margin-bottom: 5rem;
 }
-body .hero .store_button_container .store_button {
+body section .hero .store_button_container .store_button {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -283,11 +286,11 @@ body .hero .store_button_container .store_button {
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 3px 3px 6px rgba(0, 0, 0, 0.15);
   transition: 300ms ease-in-out;
 }
-body .hero .store_button_container .store_button:hover {
+body section .hero .store_button_container .store_button:hover {
   background-color: #663510;
   box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3), 3px 3px 12px rgba(0, 0, 0, 0.15);
 }
-body .hero .store_button_container .store_button:active {
+body section .hero .store_button_container .store_button:active {
   box-shadow: 0px 0px 0px;
 }
 body article #our_collection {
@@ -618,11 +621,27 @@ body section .carousel_nav > label {
     width: 100%;
   }
   body header .header .navbar li #cart_alert {
-    top: 6.5rem;
-    right: 10rem;
+    top: 9%;
+    right: 46%;
   }
   body header .underline {
     margin-top: 1.5rem;
+  }
+  body section h2 {
+    font-size: 2.5rem;
+  }
+  body section .h2top {
+    padding-left: 2%;
+    padding-right: 0;
+  }
+  body section .h2bottom {
+    padding-right: 2%;
+    padding-left: 0;
+  }
+  body section p {
+    margin: 1rem;
+    padding: 0;
+    width: auto;
   }
   body section h2.h2cart {
     font-size: 2.5rem;
@@ -680,22 +699,6 @@ body section .carousel_nav > label {
   }
   body section .hero {
     max-width: 600px;
-  }
-  body section .hero h2 {
-    font-size: 2.5rem;
-  }
-  body section .hero .h2top {
-    padding-left: 2%;
-    padding-right: 0;
-  }
-  body section .hero .h2bottom {
-    padding-right: 2%;
-    padding-left: 0;
-  }
-  body section .hero p {
-    margin: 1rem;
-    padding: 0;
-    width: auto;
   }
   body section .hero .container {
     min-height: 250px;
@@ -857,15 +860,24 @@ body section .carousel_nav > label {
     width: 98%;
   }
 }
-body section .hero .h2validation {
+body section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body section .h2validation {
+  font-family: "Srisakdi";
   font-size: 2rem;
   text-align: center;
   padding: 0;
 }
-body section .hero .h2validation span {
+body section .h2validation span {
   font-family: "Roboto";
   font-weight: 400;
   font-size: 1.5rem;
+}
+body section p {
+  text-align: center;
 }
 
 body section .h2product {
@@ -913,8 +925,8 @@ body section .products .options fieldset .option {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
   align-content: center;
 }
 body section .products .options fieldset .option .varnish {
@@ -1308,11 +1320,14 @@ body section .forms .cart_save:active {
     max-width: 100%;
   }
   body section .cart_card {
-    max-height: 250px;
+    max-height: 350px;
     max-width: 98%;
   }
   body section .cart_card img {
     max-width: 40%;
+  }
+  body section .cart_card .product_infos {
+    min-height: 300px;
   }
   body section .cart_card .product_infos .card_bottom div.cart_modifications {
     display: flex;
@@ -1385,6 +1400,9 @@ body section .forms .cart_save:active {
   }
   body section .cart_card img {
     max-width: 40%;
+  }
+  body section .cart_card .product_infos {
+    min-height: 300px;
   }
   body section .cart_card .product_infos .card_bottom div.cart_modifications {
     display: flex;

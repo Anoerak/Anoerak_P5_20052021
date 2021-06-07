@@ -42,8 +42,8 @@ body{
                         display: flex;
                         flex-direction: row;
                         flex-wrap: wrap;
-                        justify-content: space-around;
-                        align-items: center;
+                        justify-content: flex-end;
+                        align-items: flex-end;
                         align-content: center;
                         & .varnish{
                             margin: 10px;
