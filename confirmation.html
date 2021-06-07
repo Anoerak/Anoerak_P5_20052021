@@ -42,7 +42,7 @@
             <h1>Orinoco</h1>
             <ul class="navbar">
                 <li class="search"><a href="#"><i class="fas fa-search"></i></a></li>
-                <li class="cart"><a href="./cart.html"><i class="fab fa-opencart"></i></a></li>
+                <li class="cart"><span id="cart_alert"></span><a href="./cart.html"><i class="fab fa-opencart"></i></a></li>
                 <li class="account"><a href="#"><i class="fas fa-user"></i></a></li>
             </ul>
         </div>
@@ -50,11 +50,11 @@
     </header>
     <section>
         <article class="hero">
-            <h2 class="h2validation">Votre commande <span class="order_id"><strong>N° de cde</strong></span> pour une montant de <span class="montant"><strong>1198.00</strong></span><strong>€</strong> est validée !!</h2>
+            <h2 class="h2validation">Bonjour <strong><span id="customer"></span></strong>, <br>votre commande n°<strong><span id="order_nb"></span></strong> pour un montant de <strong><span id="montant"></span>€</strong> est validée !!</h2>
                 <p>Toute l'équipe Orinoco vous remercie pour votre confiance.<br>Vous recevrez sous 48H votre confirmation d'expédition avec les coordonnées du transporteur <br> ainsi qu'un numéro de suivi. <br>Orinoco vous souhaite une agréable journée et attend votre retour avec impatience :).</p>
             <br><br>
             <div class="store_button_container">
-                <a href="./index.html" class="store_button"><i class="fas fa-home"></i>Accueil</a>
+                <a id="close_order" href="#" class="store_button"><i class="fas fa-home"></i>Accueil</a>
             </div>
         </article>
     </section>
@@ -94,5 +94,6 @@
             </div>
         </div>
     </footer>
+    <script src="./JS/script.js"></script>
 </body>
 </html>

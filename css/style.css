@@ -862,6 +862,11 @@ body section .hero .h2validation {
   text-align: center;
   padding: 0;
 }
+body section .hero .h2validation span {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 1.5rem;
+}
 
 body section .h2product {
   font-family: "Srisakdi";

@@ -1,4 +1,4 @@
-    // Variables
+    // Variables.
     const nameDiv = document.getElementById('name'),
           descriptionDiv = document.getElementById('description'),
           priceDiv = document.getElementById('price'),
@@ -12,101 +12,98 @@
           emptyBtnDiv = document.getElementById('empty_button'),
           updateBtnDiv = document.getElementsByClassName('cart_update');
 
-
     let ID = window.location.hash.substr(10);
-    console.log(ID)
-    let logTest = "";
     let furniture = "";
     var vernis = "";
     let cartAlertDiv = document.getElementById('cart_alert');
 
-    document.addEventListener('DOMContentLoaded',onLoadCartInitialization)
-
-    fetch('http://localhost:3000/api/furniture')
-    .then(function(res) {
-        if (res.ok) {
-            return res.json();
-        }
-    })
-    .then(data => furniture = data)
-    .then((furniture) => {
-        console.table(furniture)
-    })
 
 
-    // Charge le script uniquement sur la page Article et lance la fonction de récupération de données API
+    // Charge le script uniquement sur la page index et lance la fonction de récupération des données du panier.
+    if(window.location.pathname === '/index.html'){
+        document.addEventListener('DOMContentLoaded',onLoadCartInitialization)
+    } else {
+    };
+
+
+
+    // Charge le script uniquement sur la page Article et lance la fonction de récupération de données API.
     console.log(window.location.pathname)
-        if(window.location.pathname === '/Sebastien_Proust_5_20052021/product.html')
-            {document.addEventListener('DOMContentLoaded',article),
-                qtyDiv.addEventListener('input', function(){
-                priceDiv.innerHTML = (((furniture.price*(qtyDiv.value))/100).toFixed(2))+"€";
-            });
+    if(window.location.pathname === '/product.html')
+        {document.addEventListener('DOMContentLoaded',article),
+        document.addEventListener('DOMContentLoaded',onLoadCartInitialization),
+            //Fonction d'ajustement du prix d'affichage sur la base de la quantité sélectionnée.
+            qtyDiv.addEventListener('input', function(){
+            priceDiv.innerHTML = (((furniture.price*(qtyDiv.value))/100).toFixed(2))+"€";
+        });
 
-        console.log(ID);
+    console.log(ID);
 
-            // Va récupérer les données de l'API, les convertir et les placer ds le DOM
-            function article(){
-                fetch('http://localhost:3000/api/furniture'+'/'+ID)
-                    .then(function(res) {
-                        if (res.ok) {
-                            return res.json();
-                        }
-                    })
-                    .then(data => furniture = data)
-                    .then (furniture => vernis = furniture.varnish)
-                    .then(function() {
-                        console.log(furniture)
-                        nameDiv.innerHTML = furniture.name;
-                        descriptionDiv.innerHTML = furniture.description;
-                        priceDiv.innerHTML = (((furniture.price*(qtyDiv.value))/100).toFixed(2))+"€";
-                        photoDiv.src=furniture.imageUrl;
-                            vernis.forEach(createOption);
-                                function createOption(item, index){
-                                    let opt = document.createElement('option');
-                                    opt.value = index;
-                                    opt.innerHTML += item;
-                                    varnishDiv.appendChild(opt);
-                                }
-                    })
-                    .catch(function(err) {
-                        console.log("Attention, quelque chose ne tourne pas rond!!!")
-                    })
-                };
-
-                cartsDiv.addEventListener('click', function() {
-                    let selectedVarnish = varnishDiv.selectedOptions;
-                    let localSelector = selectedVarnish[0].innerHTML;
-                    let localArray = [];
-                    let selection ={
-                        Id: ID,
-                        Name: nameDiv.textContent,
-                        Description: descriptionDiv.textContent,
-                        Photo: photoDiv.src,
-                        Varnish: selectedVarnish[0].innerHTML,
-                        Qty: parseInt(qtyDiv.value),
-                        Price: parseInt((((furniture.price*(qtyDiv.value))/100).toFixed(2))),
-                        
+        // Va récupérer les données de l'API, les convertir et les placer ds le DOM.
+        function article(){
+            fetch('http://localhost:3000/api/furniture'+'/'+ID)
+                .then(function(res) {
+                    if (res.ok) {
+                        return res.json();
                     }
-                    localArray.push(selection.Id, selection.Name, selection.Description, selection.Photo, selection.Varnish, selection.Qty, selection.Price);
-                    console.log(selection)
-                    console.log(typeof(selection.Price))
-                    localStorage.setItem(ID+"_"+localSelector, JSON.stringify(localArray))
-
-                    onLoadCartInitialization();
-                    alert(selection.Qty + ' ' + selection.Name + ' ajouté à votre panier')
                 })
-        }
+                .then(data => furniture = data)
+                .then (furniture => vernis = furniture.varnish)
+                //Récupère les données API et implémente le DOM de la fiche produit.
+                .then(function() {
+                    console.log(furniture)
+                    nameDiv.innerHTML = furniture.name;
+                    descriptionDiv.innerHTML = furniture.description;
+                    priceDiv.innerHTML = (((furniture.price*(qtyDiv.value))/100).toFixed(2))+"€";
+                    photoDiv.src=furniture.imageUrl;
+                        vernis.forEach(createOption);
+                            function createOption(item, index){
+                                let opt = document.createElement('option');
+                                opt.value = index;
+                                opt.innerHTML += item;
+                                varnishDiv.appendChild(opt);
+                            }
+                })
+                .catch(function(err) {
+                    console.log("Attention, quelque chose ne tourne pas rond!!!")
+                })
+            };
+            //Lors de la sélection de l'article, récupère les données des champs du DOM pour créer un tableau dans le stockage local.
+            cartsDiv.addEventListener('click', function() {
+                let selectedVarnish = varnishDiv.selectedOptions;
+                let localSelector = selectedVarnish[0].innerHTML;
+                let localArray = [];
+                let selection ={
+                    Id: ID,
+                    Name: nameDiv.textContent,
+                    Description: descriptionDiv.textContent,
+                    Photo: photoDiv.src,
+                    Varnish: selectedVarnish[0].innerHTML,
+                    Qty: parseInt(qtyDiv.value),
+                    Price: parseInt((((furniture.price*(qtyDiv.value))/100).toFixed(2))),
+                    
+                }
+                //Ajoute une ligne spécifique au produit/vernis ou écrase la quantité si déjà existant.
+                localArray.push(selection.Id, selection.Name, selection.Description, selection.Photo, selection.Varnish, selection.Qty, selection.Price);
+                console.log(selection)
+                console.log(typeof(selection.Price))
+                localStorage.setItem(ID+"_"+localSelector, JSON.stringify(localArray))
+                //Message de confirmation de l'ajout au panier.
+                onLoadCartInitialization();
+                alert(selection.Qty + ' ' + selection.Name + ' ajouté à votre panier')
+            })
+    } else {};
 
-    // Charge le script uniquement sur la page Panier et lance la fonction de récupération de données en stockage loacale
-    if(window.location.pathname === '/Sebastien_Proust_5_20052021/cart.html') {
+
+
+    // Charge le script uniquement sur la page Panier et lance la fonction de récupération de données en stockage locale.
+    if(window.location.pathname === '/cart.html') {
         let myCart = [];
-        
+        document.addEventListener('DOMContentLoaded',onLoadCartInitialization);
+        //Charge le panier dans le stockage local et implémente le DOM pour chaque ligne produit.
         Object.keys(localStorage).forEach(function(key){
-            // console.log(localStorage.getItem(key));
             let cartArray = JSON.parse(localStorage.getItem(key));
-            // console.table(test);
             myCart.push(cartArray);
-            // console.table(myCart)
             let card = document.createElement('div');
                 card.id = key;
                 card.className = "cart_card";
@@ -115,8 +112,8 @@
                 document.getElementById('cart_list').appendChild(card); 
         });
 
+        //
         let sumMyCart = (myCart) => {
-
             let newArray = [];
             myCart.forEach(sub => {
                 sub.forEach((num, index) => {
@@ -129,7 +126,7 @@
             });
             return (newArray);
         };
-
+        //Activation du bouton d'affichage du formulaire et du formulaire
         if(Object.keys(localStorage) === null){
            document.getElementById('cart_update').setAttribute('disabled', '');
         } else {
@@ -142,14 +139,14 @@
             document.getElementById('cart_update').addEventListener('click', function() {
                 let form = document.createElement('div')
                 form.className = 'forms';
-                form.innerHTML = '<div class="underline"></div><form method="post" action="données" id="inscription"><div class="intro"><h2>Vos Coordonnées</h2><p>Attention, délais de livraison modifiés en raison des restrictions COVID19</p><br /></div><div class="shipment"><p><input type="text" name="firstname" id="firstname" placeholder="Prénom" pattern="[a-zA-Z].{4,}" title="Please insert at least 5 characters" required /><input type="text" name="lastname" id="lastname" placeholder="Nom" pattern="[a-zA-Z].{3,}" title="Please insert at least 3 characters" required /></p><p><input type="text" name="adresse" id="address" placeholder="adresse" required /></p><p><input type="text" name="cp" id="cp" placeholder="Code Postal." pattern="\{5,}" title="Please insert at least 5 numbers" minlength="5" required /><input type="text" name="city" id="city" placeholder="Ville." pattern="[a-zA-Z].{3,}" title="Please insert at least 3 characters" required /></p><p><input type="email" name="email" id="email" placeholder="Adresse e-mail (pour votre facture)" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/></p></div><input id="validate_order" class="cart_save" form="inscription" type="button" value="Valider"">';
+                form.innerHTML = '<div class="underline"></div><form method="post" action="./confirmation.html" id="inscription"><div class="intro"><h2>Vos Coordonnées</h2><p>Attention, délais de livraison modifiés en raison des restrictions COVID19</p><br /></div><div class="shipment"><p><input type="text" name="firstname" id="firstname" placeholder="Prénom" pattern="[a-zA-Z].{4,}" title="Please insert at least 5 characters" required /><input type="text" name="lastname" id="lastname" placeholder="Nom" pattern="[a-zA-Z].{3,}" title="Please insert at least 3 characters" required /></p><p><input type="text" name="adresse" id="address" placeholder="adresse" required /></p><p><input type="text" name="cp" id="cp" placeholder="Code Postal." pattern="\{5,}" title="Please insert at least 5 numbers" minlength="5" required /><input type="text" name="city" id="city" placeholder="Ville." pattern="[a-zA-Z].{3,}" title="Please insert at least 3 characters" required /></p><p><input type="email" name="email" id="email" placeholder="Adresse e-mail (pour votre facture)" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/></p></div><input id="validate_order" class="cart_save" form="inscription" type="submit" value="Valider"">';
 
             document.getElementById('total_area').parentNode.appendChild(form);
 
             validateBtn = document.getElementById('validate_order');
 
+            //Evènement sur bouton VALIDER pour récupération des éléments du formualaire et POST vers API
             validateBtn.addEventListener('click', function() {
-                console.table(myCart);
                 let contact = {
                     firstName: document.getElementById('firstname').value,
                     lastName: document.getElementById('lastname').value,
@@ -157,31 +154,74 @@
                     city: document.getElementById('cp').value + ' ' + document.getElementById('city').value,
                     email: document.getElementById('email').value,
                 };
-                console.log(contact)
-                let products = myCart;
-                products.toString();
-                console.log(products);
+                //Fonction d'extraction des products_id du panier
+                function getCol(matrix, col){
+                    var column = [];
+                    for(var i=0; i<matrix.length; i++){
+                        column.push(matrix[i][col]);
+                    }
+                    return column;
+                }
+                let products = getCol(myCart, 0);
+                console.table(products)
+
+                //Mise en forme et envois des éléments vers l'API
+                let data = JSON.stringify({contact, products});
+                console.log(data)
     
                 fetch('http://localhost:3000/api/furniture/order', {
                     method: 'POST',
-                    body: JSON.stringify(contact),
-                    body: JSON.stringify(products),
+                    headers: {
+                        'content-type': "application/json"
+                      },
+                    body: data
                     })
-                    .then(res => res.json())
-                    .then(data => console.table('Success:', data))
+                    .then(function (response) {
+                        return response.json()
+                        })
+                    .then(function (r) {
+                        localStorage.setItem("contact", JSON.stringify(r.contact));
+                        localStorage.setItem("orderId", JSON.stringify(r.orderId));
+                        localStorage.setItem("Amout", JSON.stringify((subtts[6]).toFixed(2)));
+                        window.location.href=("./confirmation.html");
+                    })
                     .catch(error => {
-                    console.error('Error:', error);
+                        console.error('Error:', error),
+                        alert("Merci de vérifier les coordonnées saisies.");
                     });
                 });        
                 document.getElementById('cart_update').setAttribute('disabled', '')
             });
         };
 
+
+        //Evènement + fonction pour vider le panier
         emptyBtnDiv.addEventListener('click', function() {
             localStorage.clear();
             location.reload();
         });
-    };
+    } else {};
+
+
+
+    // Charge le script uniquement sur la page Panier et lance la fonction de récupération de données en stockage locale.
+    if(window.location.pathname === '/confirmation.html') {
+        let contact = JSON.parse(localStorage.getItem('contact'));
+        document.getElementById('customer').innerHTML = contact.firstName;
+        document.getElementById('order_nb').innerHTML = localStorage.getItem('orderId');
+        document.getElementById('montant').innerHTML = localStorage.getItem('Amout');
+
+        document.getElementById('close_order').addEventListener('click', function() {
+            if(localStorage) { 
+                localStorage.clear()             
+            } else {
+                alert("Sorry, no local storage."); 
+            }
+            
+            window.location.href=('./index.html');
+        })
+        } else {
+        };
 
 
 
@@ -191,7 +231,7 @@
         Object.keys(localStorage).forEach(function(key){
             let cartArray = JSON.parse(localStorage.getItem(key));
             myCart.push(cartArray);
-        })
+        });
         let sumMyCart = (myCart) => {
             let newArray = [];
             myCart.forEach(sub => {

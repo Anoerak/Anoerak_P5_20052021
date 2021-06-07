@@ -5,6 +5,11 @@ body{
                 font-size: 2rem;
                 text-align: center;
                 padding: 0;
+                & span{
+                    font-family: 'Roboto';
+                    font-weight: 400;
+                    font-size: 1.5rem;
+                }
             }        
         }
     }
