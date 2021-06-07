@@ -35,7 +35,7 @@
 
     // Charge le script uniquement sur la page Article et lance la fonction de récupération de données API
     console.log(window.location.pathname)
-        if(window.location.pathname === '/product.html')
+        if(window.location.pathname === '/Sebastien_Proust_5_20052021/product.html')
             {document.addEventListener('DOMContentLoaded',article),
                 qtyDiv.addEventListener('input', function(){
                 priceDiv.innerHTML = (((furniture.price*(qtyDiv.value))/100).toFixed(2))+"€";
@@ -97,7 +97,7 @@
         }
 
     // Charge le script uniquement sur la page Panier et lance la fonction de récupération de données en stockage loacale
-    if(window.location.pathname === '/cart.html') {
+    if(window.location.pathname === '/Sebastien_Proust_5_20052021/cart.html') {
         let myCart = [];
         
         Object.keys(localStorage).forEach(function(key){
@@ -156,7 +156,10 @@
                     city: document.getElementById('cp').value + ' ' + document.getElementById('city').value,
                     email: document.getElementById('email').value,
                 };
-                let products = [];
+                console.log(contact)
+                let products = myCart;
+                products.toString();
+                console.log(products);
     
                 fetch('http://localhost:3000/api/furniture/order', {
                     method: 'POST',
@@ -169,7 +172,6 @@
                     console.error('Error:', error);
                     });
                 });        
-                console.log(validateBtn);
                 document.getElementById('cart_update').setAttribute('disabled', '')
             });
         };
