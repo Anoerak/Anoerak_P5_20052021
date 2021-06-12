@@ -98,6 +98,8 @@ body{
                 & img{
                     object-fit: cover;
                     border-radius: 5px;
+                    width: 400px;
+                    max-height: 265px;
                 }
                 & p{
                     text-align: center;

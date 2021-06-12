@@ -1,5 +1,8 @@
     // Variables.
-    const nameDiv = document.getElementById('name'),
+    const ID = window.location.hash.substr(10),
+          indexUrl = ('http://localhost:3000/api/furniture'),
+          productsUrl = ('http://localhost:3000/api/furniture'+'/'+ID),
+          nameDiv = document.getElementById('name'),
           descriptionDiv = document.getElementById('description'),
           priceDiv = document.getElementById('price'),
           photoDiv = document.getElementById('photo'),
@@ -9,23 +12,44 @@
           priceSubttDiv = document.getElementById('price_subtt'),
           tvaDiv = document.getElementById('tva'),
           priceTtDiv = document.getElementById('total_price'),
-          emptyBtnDiv = document.getElementById('empty_button'),
+          emptyBtnDiv = document.getElementById('empty_button'),          
           updateBtnDiv = document.getElementsByClassName('cart_update');
 
-    let ID = window.location.hash.substr(10);
     let furniture = "";
     var vernis = "";
     let cartAlertDiv = document.getElementById('cart_alert');
 
-
-
     // Charge le script uniquement sur la page index et lance la fonction de récupération des données du panier.
     if(window.location.pathname === '/index.html'){
-        document.addEventListener('DOMContentLoaded',onLoadCartInitialization)
+        document.addEventListener('DOMContentLoaded',onLoadCartInitialization),
+        document.addEventListener('DOMContentLoaded',article);
+
+    let collection = [];
+
+    // Va récupérer les données de l'API, les convertir et les placer ds le DOM de l'index.
+    fetch(indexUrl)
+                .then(function(res) {
+                    if (res.ok) {
+                        return res.json();
+                    }
+                })
+                .then(data => collection = data)
+                .then(function(){
+                    console.table(collection)
+                    Object.keys(collection).forEach(function(key){
+                        let myCart = [];
+                        let cartArray = collection[key];
+                        myCart.push(cartArray);
+                        console.table(cartArray)
+                        let card = document.createElement('a');
+                            card.href = './product.html#home?_id='+ cartArray._id;
+                            card.className = "card";
+                            card.innerHTML += '<img src="'+ cartArray.imageUrl+'" alt="table_pied_croix_bois_clair"><h4>'+cartArray.name+'</h4><p>Consulter la fiche</p>'
+                            document.getElementById('store').appendChild(card); 
+                    });
+                })
     } else {
     };
-
-
 
     // Charge le script uniquement sur la page Article et lance la fonction de récupération de données API.
     if(window.location.pathname === '/product.html'){
@@ -33,12 +57,12 @@
             document.addEventListener('DOMContentLoaded',onLoadCartInitialization),
             //Fonction d'ajustement du prix d'affichage sur la base de la quantité sélectionnée.
             qtyDiv.addEventListener('input', function(){
-            priceDiv.innerHTML = (((furniture.price*(qtyDiv.value))/100).toFixed(2))+"€";
-        });
+                priceDiv.innerHTML = (((furniture.price*(qtyDiv.value))/100).toFixed(2))+"€";
+            });
 
-        // Va récupérer les données de l'API, les convertir et les placer ds le DOM.
+    // Va récupérer les données de l'API, les convertir et les placer ds le DOM.
         function article(){
-            fetch('http://localhost:3000/api/furniture'+'/'+ID)
+            fetch(productsUrl)
                 .then(function(res) {
                     if (res.ok) {
                         return res.json();
@@ -46,8 +70,9 @@
                 })
                 .then(data => furniture = data)
                 .then (furniture => vernis = furniture.varnish)
-                //Récupère les données API et implémente le DOM de la fiche produit.
+    //Récupère les données API et implémente le DOM de la fiche produit.
                 .then(function() {
+                    if(window.location.pathname === '/product.html'){
                     nameDiv.innerHTML = furniture.name;
                     descriptionDiv.innerHTML = furniture.description;
                     priceDiv.innerHTML = (((furniture.price*(qtyDiv.value))/100).toFixed(2))+"€";
@@ -59,13 +84,19 @@
                                 opt.innerHTML += item;
                                 varnishDiv.appendChild(opt);
                             }
+                    }
                 })
                 .catch(function(err) {
                     console.log("Attention, quelque chose ne tourne pas rond!!!")
                 })
             };
-            //Lors de la sélection de l'article, récupère les données des champs du DOM pour créer un tableau dans le stockage local.
+    //Lors de la sélection de l'article, récupère les données des champs du DOM pour créer un tableau dans le stockage local.
             cartsDiv.addEventListener('click', function() {
+                if(parseInt(qtyDiv.value) === 0){
+                    alert('Merci de sélectionner une quantité')
+                } else if(varnishDiv.value === 'empty') {
+                    alert('Merci de sélectionner un vernis')
+                } else {
                 let selectedVarnish = varnishDiv.selectedOptions;
                 let localSelector = selectedVarnish[0].innerHTML;
                 let localArray = [];
@@ -77,38 +108,23 @@
                     Varnish: selectedVarnish[0].innerHTML,
                     Qty: parseInt(qtyDiv.value),
                     Price: parseInt((((furniture.price*(qtyDiv.value))/100).toFixed(2))),
-                    
+                
                 }
-                //Ajoute une ligne spécifique au produit/vernis ou écrase la quantité si déjà existant.
+    //Ajoute une ligne spécifique au produit/vernis ou écrase la quantité si déjà existant.
                 localArray.push(selection.Id, selection.Name, selection.Description, selection.Photo, selection.Varnish, selection.Qty, selection.Price);
                 localStorage.setItem(ID+"_"+localSelector, JSON.stringify(localArray))
-                //Message de confirmation de l'ajout au panier.
+    //Message de confirmation de l'ajout au panier.
                 onLoadCartInitialization();
                 alert(selection.Qty + ' ' + selection.Name + ' ' + selection.Varnish + ' ajouté à votre panier')
-            })
+            }})
     } else {};
-
-
 
     // Charge le script uniquement sur la page Panier et lance la fonction de récupération de données en stockage locale.
     if(window.location.pathname === '/cart.html') {
         let myCart = [];
         document.addEventListener('DOMContentLoaded',onLoadCartInitialization);
 
-        //Charge le panier dans le stockage local et implémente le DOM pour chaque ligne produit.
-        let sumMyCart = (myCart) => {
-            let newArray = [];
-            myCart.forEach(sub => {
-                sub.forEach((num, index) => {
-                    if(newArray[index]) {
-                        newArray[index] += num;
-                    } else {
-                        newArray[index] = num;
-                    }
-                });
-            });
-            return (newArray);
-        };
+    //Charge le panier dans le stockage local et implémente le DOM pour chaque ligne produit.
         Object.keys(localStorage).forEach(function(key){
             let cartArray = JSON.parse(localStorage.getItem(key));
             myCart.push(cartArray);
@@ -119,16 +135,10 @@
                 document.getElementById('cart_list').appendChild(card); 
         });
 
-        //Activation du bouton d'affichage du formulaire et du formulaire
+    //Activation du bouton d'affichage du formulaire et du formulaire
         if(Object.keys(localStorage) === null){
            document.getElementById('cart_update').setAttribute('disabled', '');
         } else {
-            let subtts = sumMyCart(myCart);
-
-            priceSubttDiv.textContent = (subtts[6]).toFixed(2);
-            tva.textContent = ((subtts[6]/120)*20).toFixed(2);
-            priceTtDiv.textContent = (subtts[6]).toFixed(2); 
-
             document.getElementById('cart_update').addEventListener('click', function() {
                 let form = document.createElement('div')
                 form.className = 'forms';
@@ -144,13 +154,14 @@
                 validateBtn.setAttribute('disabled', '')
             }else{
             }
-            forms.addEventListener('input', function(){
+            document.getElementById('email').addEventListener('input', function(){
                 if(forms.reportValidity() == true){
                     validateBtn.disabled = false;
                 }else{
                 }
-            })
-            //Evènement sur bouton VALIDER pour récupération des éléments du formualaire et POST vers API
+            });
+
+    //Evènement sur bouton VALIDER pour récupération des éléments du formualaire et POST vers API
             validateBtn.addEventListener('click', function() {
                 let contact = {
                     firstName: document.getElementById('firstname').value,
@@ -159,7 +170,8 @@
                     city: document.getElementById('cp').value + ' ' + document.getElementById('city').value,
                     email: document.getElementById('email').value,
                 };
-                //Fonction d'extraction des products_id du panier
+
+    //Fonction d'extraction des products_id du panier
                 function getCol(matrix, col){
                     var column = [];
                     for(var i=0; i<matrix.length; i++){
@@ -169,7 +181,7 @@
                 }
                 let products = getCol(myCart, 0);
 
-                //Mise en forme et envois des éléments vers l'API
+    //Mise en forme et envois des éléments vers l'API
                 let data = JSON.stringify({contact, products});
     
                 fetch('http://localhost:3000/api/furniture/order', {
@@ -185,7 +197,7 @@
                     .then(function (r) {
                         localStorage.setItem("contact", JSON.stringify(r.contact));
                         localStorage.setItem("orderId", JSON.stringify(r.orderId));
-                        localStorage.setItem("Amout", JSON.stringify((subtts[6]).toFixed(2)));
+                        localStorage.setItem("Amout", JSON.stringify(priceTtDiv.textContent));
                         window.location.href=("./confirmation.html");
                     })
                     .catch(error => {
@@ -196,18 +208,24 @@
                 document.getElementById('cart_update').setAttribute('disabled', '')
             });
         };
+    //Evènement + fonction pour vider le panier
+    removeBtnDiv = document.querySelectorAll('.cart_delete');
 
+    removeBtnDiv.forEach(id => id.addEventListener('click', event => {
+        localStorage.removeItem(event.target.getAttribute("id"));
+        location.reload();
+    }));
 
-        //Evènement + fonction pour vider le panier
+    //Evènement + fonction pour vider le panier
         emptyBtnDiv.addEventListener('click', function() {
             localStorage.clear();
             location.reload();
         });
-    } else {};
+    } else {
 
+    };
 
-
-    // Charge le script uniquement sur la page Confirmaiton, personnalise le message et vide le stockage local et renvoie vers l'acceuil.
+    // Charge le script uniquement sur la page Confirmation, personnalise le message et vide le stockage local et renvoie vers l'acceuil.
     if(window.location.pathname === '/confirmation.html') {
         let contact = JSON.parse(localStorage.getItem('contact'));
         document.getElementById('customer').innerHTML = contact.firstName;
@@ -226,30 +244,42 @@
         } else {
         };
 
-
-
     // Permet d'afficher le nombre de produit ds le cart au chargement de la page
     function onLoadCartInitialization(){        
         let myCart = [];
-        Object.keys(localStorage).forEach(function(key){
-            let cartArray = JSON.parse(localStorage.getItem(key));
-            myCart.push(cartArray);
-        });
-        let sumMyCart = (myCart) => {
-            let newArray = [];
-            myCart.forEach(sub => {
-                sub.forEach((num, index) => {
-                    if(newArray[index]) {
-                        newArray[index] += num;
-                    } else {
-                        newArray[index] = num;
-                    }
+        if(Object.keys(localStorage) === null){
+            document.getElementById('cart_update').setAttribute('disabled', '');
+        }   else {
+                Object.keys(localStorage).forEach(function(key){
+                    let cartArray = JSON.parse(localStorage.getItem(key));
+                        myCart.push(cartArray);
                 });
-            });
-            return (newArray);
-        }
-        let cart = sumMyCart(myCart);
+
+                let sumMyCart = (myCart) => {
+                    let newArray = [];
+                    myCart.forEach(sub => {
+                        sub.forEach((num, index) => {
+                            if(newArray[index]) {
+                                newArray[index] += num;
+                            } else {
+                                newArray[index] = num;
+                            }
+                        });
+                    });
+                    return (newArray);
+                }
+            let cart = sumMyCart(myCart);
+
             cartAlertDiv.textContent = cart[5];
+
+            if(window.location.pathname === '/cart.html') {
+                priceSubttDiv.textContent = (cart[6]).toFixed(2);
+                tva.textContent = ((cart[6]/120)*20).toFixed(2);
+                priceTtDiv.textContent = (cart[6]).toFixed(2); 
+            } else {
+
+            }
+         }
         }
     
 

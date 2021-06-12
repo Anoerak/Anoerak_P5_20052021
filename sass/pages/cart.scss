@@ -148,6 +148,11 @@ body{
                     font-weight: 300;
                 }
             }
+            & .total_area{
+                & .total_price{
+                    font-size: 2rem;
+                }
+            }
             & .underline{
                 margin: 1rem;
             }
