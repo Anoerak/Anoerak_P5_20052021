@@ -87,7 +87,7 @@
                     }
                 })
                 .catch(function(err) {
-                    console.log("Attention, quelque chose ne tourne pas rond!!!")
+                    console.log(error)
                 })
             };
     //Lors de la sélection de l'article, récupère les données des champs du DOM pour créer un tableau dans le stockage local.
@@ -131,14 +131,15 @@
             let card = document.createElement('div');
                 card.id = key;
                 card.className = "cart_card";
-                card.innerHTML += '<img src="'+cartArray[3]+'" alt="table_design_bois"><div class="product_infos"><div class="product_title"><h3 class="ttl">' + cartArray[1] + '</h3><p class="price_unit"><span class="price_unit">'+(cartArray[6]/cartArray[5]).toFixed(2) +'</span>€</p></div><div class="underline"></div><div class="card_bottom"><p>'+cartArray[2]+'</p><div class="cart_modifications"><div class="product_numbers"><p class="varnish_cart">Vernis :<br> <strong><span class="varnish_cart_choosed">'+cartArray[4]+'</span></strong></p><p class="qty">Quantité : <br><strong><span class="qty">'+cartArray[5]+'</span></strong></p><p class="price_total">Tarif : <br><strong><span class="price_total">'+cartArray[6]+'</span>€</strong></p></div><div class="cart_buttons"><input id="'+key+'"class="cart_delete" type="button" value="Retirer"></div></div><div class="underline"></div></div></div>'
+                card.innerHTML += '<img src="'+cartArray[3]+'" alt="table_design_bois"><div class="product_infos"><div class="product_title"><h3 class="ttl">' + cartArray[1] + '</h3><p class="price_unit"><span class="price_unit">'+(cartArray[6]/cartArray[5]).toFixed(2) +'</span>€</p></div><div class="underline"></div><div class="card_bottom"><p>'+cartArray[2]+'</p><div class="cart_modifications"><div class="product_numbers"><p class="varnish_cart">Vernis :<br> <strong><span class="varnish_cart_choosed">'+cartArray[4]+'</span></strong></p><p class="qty">Quantité : <br><strong><span class="qty">'+cartArray[5]+'</span></strong></p><p class="price_total">Tarif : <br><strong><span class="price_total">'+cartArray[6]+'</span>€</strong></p></div><div class="cart_buttons"><input id="'+key+'"class="cart_delete" type="button" value="Annuler"></div></div><div class="underline"></div></div></div>'
                 document.getElementById('cart_list').appendChild(card); 
         });
 
     //Activation du bouton d'affichage du formulaire et du formulaire
-        if(Object.keys(localStorage) === null){
-           document.getElementById('cart_update').setAttribute('disabled', '');
+        if(Object.keys(localStorage).length === 0){
+           document.getElementById('cart_update').disabled = true;
         } else {
+            document.getElementById('cart_update').disabled = false;
             document.getElementById('cart_update').addEventListener('click', function() {
                 let form = document.createElement('div')
                 form.className = 'forms';
