@@ -18,9 +18,10 @@
     let furniture = "";
     var vernis = "";
     let cartAlertDiv = document.getElementById('cart_alert');
+    let url = (window.location.pathname);
 
     // Charge le script uniquement sur la page index et lance la fonction de récupération des données du panier.
-    if(window.location.pathname === '/index.html'){
+    if((url.substr(-11)) === '/index.html'){
         document.addEventListener('DOMContentLoaded',onLoadCartInitialization),
         document.addEventListener('DOMContentLoaded',article);
 
@@ -35,12 +36,10 @@
                 })
                 .then(data => collection = data)
                 .then(function(){
-                    console.table(collection)
                     Object.keys(collection).forEach(function(key){
                         let myCart = [];
                         let cartArray = collection[key];
                         myCart.push(cartArray);
-                        console.table(cartArray)
                         let card = document.createElement('a');
                             card.href = './product.html#home?_id='+ cartArray._id;
                             card.className = "card";
@@ -52,7 +51,7 @@
     };
 
     // Charge le script uniquement sur la page Article et lance la fonction de récupération de données API.
-    if(window.location.pathname === '/product.html'){
+    if((url.substr(-13)) === '/product.html'){
             document.addEventListener('DOMContentLoaded',article),
             document.addEventListener('DOMContentLoaded',onLoadCartInitialization),
             //Fonction d'ajustement du prix d'affichage sur la base de la quantité sélectionnée.
@@ -72,7 +71,7 @@
                 .then (furniture => vernis = furniture.varnish)
     //Récupère les données API et implémente le DOM de la fiche produit.
                 .then(function() {
-                    if(window.location.pathname === '/product.html'){
+                    if((url.substr(-13)) === '/product.html'){
                     nameDiv.innerHTML = furniture.name;
                     descriptionDiv.innerHTML = furniture.description;
                     priceDiv.innerHTML = (((furniture.price*(qtyDiv.value))/100).toFixed(2))+"€";
@@ -120,7 +119,7 @@
     } else {};
 
     // Charge le script uniquement sur la page Panier et lance la fonction de récupération de données en stockage locale.
-    if(window.location.pathname === '/cart.html') {
+    if((url.substr(-10)) === '/cart.html') {
         let myCart = [];
         document.addEventListener('DOMContentLoaded',onLoadCartInitialization);
 
@@ -162,7 +161,7 @@
                 }
             });
 
-    //Evènement sur bouton VALIDER pour récupération des éléments du formualaire et POST vers API
+    //Evènement sur bouton VALIDER pour récupération des éléments du formulaire et POST vers API
             validateBtn.addEventListener('click', function() {
                 let contact = {
                     firstName: document.getElementById('firstname').value,
@@ -190,6 +189,7 @@
                     headers: {
                         'content-type': "application/json"
                       },
+                    mode: "cors",
                     body: data
                     })
                     .then(function (response) {
@@ -202,8 +202,7 @@
                         window.location.href=("./confirmation.html");
                     })
                     .catch(error => {
-                        console.error('Error:', error),
-                        alert("Merci de vérifier les coordonnées saisies.");
+                        console.error('Error:', error);
                     });
                 });        
                 document.getElementById('cart_update').setAttribute('disabled', '')
@@ -227,7 +226,7 @@
     };
 
     // Charge le script uniquement sur la page Confirmation, personnalise le message et vide le stockage local et renvoie vers l'acceuil.
-    if(window.location.pathname === '/confirmation.html') {
+    if((url.substr(-18)) === '/confirmation.html') {
         let contact = JSON.parse(localStorage.getItem('contact'));
         document.getElementById('customer').innerHTML = contact.firstName;
         document.getElementById('order_nb').innerHTML = localStorage.getItem('orderId');
@@ -273,7 +272,7 @@
 
             cartAlertDiv.textContent = cart[5];
 
-            if(window.location.pathname === '/cart.html') {
+            if((url.substr(-10)) === '/cart.html') {
                 priceSubttDiv.textContent = (cart[6]).toFixed(2);
                 tva.textContent = ((cart[6]/120)*20).toFixed(2);
                 priceTtDiv.textContent = (cart[6]).toFixed(2); 
