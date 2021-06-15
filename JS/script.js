@@ -220,9 +220,10 @@
         emptyBtnDiv.addEventListener("click", function() {
             localStorage.clear();
             location.reload();
+            alert("Votre panier est vide.");
         });
     } else {
-
+        console.log("Vérifiez le chemin de l'url.");
     };
 
     // Charge le script uniquement sur la page Confirmation, personnalise le message et vide le stockage local et renvoie vers l'acceuil.
@@ -234,14 +235,16 @@
         document.getElementById("montant").innerHTML = localStorage.getItem("Amout");
         if(localStorage) { 
             localStorage.clear()
-        } else {};
+        } else {
+            console.log("Une erreur est remontée JS:230/237.");
+        };
 
 
         document.getElementById("close_order").addEventListener("click", function() {
             if(localStorage) { 
                 localStorage.clear()           
             } else {
-                alert("Sorry, no local storage."); 
+                alert("Une erreur est remontée JS:243/245."); 
             }
             
             window.location.href=("./index.html");
